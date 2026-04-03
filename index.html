@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Tracker 2026 — IB Preparation</title>
+<style>
+:root{
+  --bg:#ffffff;--bg2:#f8f9fa;--bg3:#f1f3f4;
+  --text:#1c1c1c;--text2:#5f6368;--text3:#9aa0a6;
+  --border:#e0e0e0;--border2:#dadce0;
+  --blue:#1a73e8;--blue-l:#e8f0fe;--blue-d:#0c447c;
+  --green:#1a7a4a;--green-l:#e6f4ea;--green-d:#137333;
+  --red:#d93025;--red-l:#fce8e6;--red-d:#c5221f;
+  --amber:#b06000;--amber-l:#fef3e2;--amber-d:#7a4000;
+  --purple:#6b35d4;--purple-l:#f0ebff;
+  --teal:#0d7377;--teal-l:#e0f7f8;
+  --navy:#1c2b4a;--r:8px;--rl:12px;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#1c1c1e;--bg2:#2c2c2e;--bg3:#3a3a3c;
+    --text:#f2f2f7;--text2:#aeaeb2;--text3:#636366;
+    --border:#3a3a3c;--border2:#48484a;
+    --blue-l:#0d2a5e;--green-l:#0d2a1e;--red-l:#3a1a1a;
+    --amber-l:#2a1a00;--purple-l:#1a0a3a;--teal-l:#002a2c;
+    --blue-d:#85b7eb;--green-d:#9fe1cb;--red-d:#f09595;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg3);color:var(--text);min-height:100vh}
+.app{max-width:700px;margin:0 auto;padding:14px}
+
+/* Header */
+.hdr{background:var(--navy);border-radius:var(--rl);padding:14px 18px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.hdr-title{color:#fff;font-size:17px;font-weight:700}
+.hdr-sub{color:#aec6e8;font-size:11px;margin-top:2px}
+.streak-badge{background:rgba(255,255,255,.13);border-radius:10px;padding:8px 14px;text-align:center}
+.streak-num{color:#fff;font-size:22px;font-weight:700}
+.streak-lbl{color:#aec6e8;font-size:10px}
+
+/* Course links bar */
+.course-links{background:var(--bg);border:1px solid var(--border);border-radius:var(--rl);padding:10px 14px;margin-bottom:10px}
+.cl-title{font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.cl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px}
+.cl-btn{display:flex;align-items:center;gap:7px;padding:8px 10px;border:1px solid var(--border2);border-radius:var(--r);background:var(--bg2);text-decoration:none;cursor:pointer;transition:all .15s;min-width:0}
+.cl-btn:hover{border-color:var(--blue);background:var(--blue-l)}
+.cl-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;align-self:center}
+.cl-label{font-size:12px;font-weight:600;color:var(--text);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cl-sub{font-size:10px;color:var(--text2);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cl-text{min-width:0;flex:1}
+
+/* Tabs */
+.tabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12px;padding:6px 13px;border:1px solid var(--border2);border-radius:20px;background:var(--bg);color:var(--text2);cursor:pointer;transition:all .15s}
+.tab.active{background:var(--blue-l);color:var(--blue);border-color:var(--blue);font-weight:700}
+.tab.done{background:var(--green-l);color:var(--green);border-color:var(--green);font-weight:700}
+.tab.done.active{background:#1a7a4a;color:#fff;border-color:#1a7a4a}
+.sec{display:none}.sec.active{display:block}
+
+/* Cards */
+.card{background:var(--bg);border:1px solid var(--border);border-radius:var(--rl);padding:14px 16px;margin-bottom:10px}
+h3{font-size:15px;font-weight:700;margin-bottom:10px;color:var(--text)}
+h4{font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.05em;margin:10px 0 5px}
+p{font-size:13px;color:var(--text2);line-height:1.6}
+
+/* Metrics */
+.mg{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-bottom:12px}
+.metric{background:var(--bg2);border-radius:var(--r);padding:10px 12px}
+.ml{font-size:11px;color:var(--text3);margin-bottom:2px}
+.mv{font-size:21px;font-weight:700;color:var(--text)}
+.ms2{font-size:10px;color:var(--text2);margin-top:1px}
+.pb-wrap{height:8px;background:var(--bg3);border-radius:4px;margin:4px 0;overflow:hidden}
+.pb{height:8px;border-radius:4px;transition:width .4s}
+
+/* Tags */
+.tag{display:inline-block;font-size:10px;padding:2px 7px;border-radius:8px;font-weight:700}
+.t-blue{background:var(--blue-l);color:var(--blue-d,var(--blue))}
+.t-green{background:var(--green-l);color:var(--green-d,var(--green))}
+.t-red{background:var(--red-l);color:var(--red-d,var(--red))}
+.t-amber{background:var(--amber-l);color:var(--amber-d,var(--amber))}
+.t-purple{background:var(--purple-l);color:var(--purple)}
+.t-gray{background:var(--bg3);color:var(--text2)}
+
+/* Target/Actual */
+.si-table{width:100%;border-collapse:collapse;font-size:12px}
+.si-table th{text-align:left;padding:7px 8px;border-bottom:2px solid var(--border2);color:var(--text2);font-weight:700;font-size:11px;text-transform:uppercase}
+.si-table td{padding:8px;border-bottom:1px solid var(--border);vertical-align:middle}
+.si-table tr:last-child td{border-bottom:none}
+.dp{font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap}
+.dp-ok{background:var(--green-l);color:var(--green)}
+.dp-warn{background:var(--amber-l);color:var(--amber)}
+.dp-behind{background:var(--red-l);color:var(--red)}
+.dp-ahead{background:var(--blue-l);color:var(--blue)}
+
+/* Week */
+.week-nav{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.week-nav button{padding:6px 13px;border:1px solid var(--border2);border-radius:var(--r);background:var(--bg);color:var(--text2);cursor:pointer;font-size:13px}
+.week-nav button:hover{background:var(--bg2)}
+.wt{font-size:14px;font-weight:700;flex:1;text-align:center;color:var(--text)}
+
+/* Day grid */
+.day-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
+@media(min-width:480px){.day-grid{grid-template-columns:repeat(3,1fr)}}
+.day-cell{border:1px solid var(--border);border-radius:var(--r);padding:9px 8px;background:var(--bg)}
+.day-hdr{font-size:11px;font-weight:700;margin-bottom:7px;display:flex;justify-content:space-between;align-items:center}
+.day-link{font-size:10px;padding:2px 7px;border-radius:6px;text-decoration:none;font-weight:600;margin-left:4px}
+.tc{display:flex;gap:6px;align-items:flex-start;margin-bottom:4px;cursor:pointer;user-select:none;padding:3px 4px;border-radius:4px;transition:background .1s}
+.tc:hover{background:var(--bg2)}
+.cbox{width:15px;height:15px;border:1.5px solid var(--border2);border-radius:3px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;margin-top:1px;transition:all .15s}
+.cbox.done{border-color:var(--green);background:var(--green);color:#fff}
+.tlbl{font-size:11px;color:var(--text);line-height:1.4}
+.tlbl.done{text-decoration:line-through;color:var(--text3)}
+
+/* Sunday special */
+.sunday-card{border:2px solid var(--blue);background:var(--blue-l);border-radius:var(--r);padding:10px 12px;margin-bottom:8px}
+.sunday-lecture-link{display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--blue);border-radius:var(--r);text-decoration:none;margin-bottom:8px;cursor:pointer}
+.sunday-lecture-link:hover{opacity:.9}
+.sll-text{color:#fff;font-size:13px;font-weight:700}
+.sll-sub{color:rgba(255,255,255,.75);font-size:11px}
+.play-icon{width:28px;height:28px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* Kumon */
+.kblock{background:#fff8f7;border:1px solid #f5c6c2;border-radius:var(--r);padding:10px 12px;margin-bottom:8px}
+@media(prefers-color-scheme:dark){.kblock{background:#2a1212;border-color:#5a2222}}
+.sb{font-size:11px;padding:3px 9px;border:1px solid var(--border2);border-radius:var(--r);background:var(--bg2);color:var(--text2);cursor:pointer;margin:2px}
+.sb.sel{background:var(--green-l);color:var(--green);border-color:var(--green);font-weight:700}
+.ri{width:100%;font-size:12px;padding:7px 10px;border:1px solid var(--border2);border-radius:var(--r);background:var(--bg2);color:var(--text);resize:none;margin-top:4px}
+.save-btn{font-size:13px;padding:9px 20px;border:none;border-radius:var(--r);background:var(--blue);color:#fff;cursor:pointer;font-weight:700;margin-top:8px;width:100%}
+.save-btn:hover{opacity:.9}
+
+/* Milestones */
+.ms-row{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
+.ms-row:last-child{border-bottom:none}
+.msdot{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}
+.ms-done{background:var(--green-l);color:var(--green)}
+.ms-active{background:var(--blue-l);color:var(--blue)}
+.ms-future{background:var(--bg3);color:var(--text3)}
+.ms-info{flex:1}
+.ms-title{font-size:13px;font-weight:600;color:var(--text)}
+.ms-sub{font-size:11px;color:var(--text2)}
+.ms-btn{font-size:11px;padding:4px 10px;border:1px solid var(--border2);border-radius:var(--r);background:var(--bg2);color:var(--text2);cursor:pointer;white-space:nowrap}
+.ms-btn.done-btn{background:var(--green-l);color:var(--green);border-color:var(--green)}
+
+/* Streak */
+.sg{display:grid;grid-template-columns:repeat(19,1fr);gap:3px;margin:8px 0}
+.sc2{height:13px;border-radius:2px;background:var(--bg3)}
+
+/* Misc */
+.ok-box{background:var(--green-l);border:1px solid var(--green);border-radius:var(--r);padding:10px 14px;margin:8px 0}
+.warn-box{background:var(--amber-l);border:1px solid var(--amber);border-radius:var(--r);padding:10px 14px;margin:8px 0}
+.er{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.el{font-size:12px;color:var(--text2);width:110px}
+select,input[type=number]{font-size:12px;padding:5px 8px;border:1px solid var(--border2);border-radius:var(--r);background:var(--bg2);color:var(--text)}
+.hr-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border);font-size:12px;gap:8px;flex-wrap:wrap}
+.hr-row:last-child{border-bottom:none}
+.kl-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.klb{font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;background:var(--red-l);color:var(--red-d,var(--red));width:70px;text-align:center;flex-shrink:0}
+.kb-wrap{flex:1;height:10px;background:var(--bg3);border-radius:5px;overflow:hidden}
+.kb{height:10px;border-radius:5px;background:var(--red);transition:width .5s}
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- HEADER -->
+<div class="hdr">
+  <div>
+    <div class="hdr-title">Learning Tracker 2026</div>
+    <div class="hdr-sub">IB Preparation · Year 9 · Start: 06 April 2026</div>
+  </div>
+  <div class="streak-badge">
+    <div class="streak-num" id="streak-num">0</div>
+    <div class="streak-lbl">Week Streak</div>
+  </div>
+</div>
+
+<!-- COURSE LINKS -->
+<div class="course-links">
+  <div class="cl-title">Direct Course Links</div>
+  <div class="cl-grid">
+    <a class="cl-btn" href="https://cs50.harvard.edu/x" target="_blank">
+      <div class="cl-dot" style="background:#1a73e8"></div>
+      <div class="cl-text"><div class="cl-label">CS50x Harvard</div><div class="cl-sub">cs50.harvard.edu/x</div></div>
+    </a>
+    <a class="cl-btn" href="https://www.khanacademy.org" target="_blank">
+      <div class="cl-dot" style="background:#1a7a4a"></div>
+      <div class="cl-text"><div class="cl-label">Khan Academy</div><div class="cl-sub">khanacademy.org</div></div>
+    </a>
+    <a class="cl-btn" href="https://www.elementsofai.com/de" target="_blank">
+      <div class="cl-dot" style="background:#6b35d4"></div>
+      <div class="cl-text"><div class="cl-label">Elements of AI</div><div class="cl-sub">elementsofai.com/de</div></div>
+    </a>
+    <a class="cl-btn" href="https://buildingai.elementsofai.com" target="_blank">
+      <div class="cl-dot" style="background:#0d7377"></div>
+      <div class="cl-text"><div class="cl-label">Building AI</div><div class="cl-sub">buildingai.elementsofai.com</div></div>
+    </a>
+    <a class="cl-btn" href="https://www.coursera.org/learn/financial-markets-global" target="_blank">
+      <div class="cl-dot" style="background:#b06000"></div>
+      <div class="cl-text"><div class="cl-label">Yale: Finance</div><div class="cl-sub">Coursera · free</div></div>
+    </a>
+    <a class="cl-btn" href="https://www.ibm.com/quantum/learning" target="_blank">
+      <div class="cl-dot" style="background:#c5221f"></div>
+      <div class="cl-text"><div class="cl-label">IBM Quantum</div><div class="cl-sub">quantum.ibm.com</div></div>
+    </a>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab active" id="tab-dashboard" onclick="showTab('dashboard',this)">Dashboard</button>
+  <button class="tab" id="tab-sollist" onclick="showTab('sollist',this)">Target / Actual</button>
+  <button class="tab" id="tab-woche" onclick="showTab('woche',this)">Week</button>
+  <button class="tab" id="tab-kumon" onclick="showTab('kumon',this)">Kumon</button>
+  <button class="tab" id="tab-meilensteine" onclick="showTab('meilensteine',this)">Milestones</button>
+  <button class="tab" id="tab-verlauf" onclick="showTab('verlauf',this)">History</button>
+  <button class="tab" id="tab-adapt" onclick="showTab('adapt',this)" style="background:var(--blue-l);color:var(--blue);border-color:var(--blue)">Adapt</button>
+  <button class="tab" id="tab-review" onclick="showTab('review',this)" style="background:#f0ebff;color:#6b35d4;border-color:#7F77DD">AI Review</button>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="sec active">
+  <div class="mg">
+    <div class="metric"><div class="ml">Weeks</div><div class="mv" id="d-weeks">0</div><div class="ms2">since 06 Apr</div></div>
+    <div class="metric"><div class="ml">Tasks</div><div class="mv" id="d-blocks">0</div><div class="ms2">checked off total</div></div>
+    <div class="metric"><div class="ml">Avg Score</div><div class="mv" id="d-avg">—</div><div class="ms2">Tage/Week</div></div>
+    <div class="metric"><div class="ml">Kumon</div><div class="mv" id="d-kumon">0</div><div class="ms2">sessions total</div></div>
+  </div>
+  <div class="card">
+    <h3>Course Progress</h3>
+    <div style="margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;margin-bottom:3px">
+        <span style="font-size:12px;font-weight:600">CS50x Harvard</span>
+        <span class="tag t-blue" id="cs50-lbl">W0/11</span>
+      </div>
+      <div class="pb-wrap"><div class="pb" id="cs50-bar" style="width:0%;background:#1a73e8"></div></div>
+    </div>
+    <div style="margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;margin-bottom:3px">
+        <span style="font-size:12px;font-weight:600">Khan Academy Maths</span>
+        <span class="tag t-green" id="khan-lbl">Start</span>
+      </div>
+      <div class="pb-wrap"><div class="pb" id="khan-bar" style="width:0%;background:#1a7a4a"></div></div>
+    </div>
+    <div style="margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;margin-bottom:3px">
+        <span style="font-size:12px;font-weight:600">Elements of AI</span>
+        <span class="tag t-purple" id="eai-lbl">0/6</span>
+      </div>
+      <div class="pb-wrap"><div class="pb" id="eai-bar" style="width:0%;background:#6b35d4"></div></div>
+    </div>
+    <div>
+      <div style="display:flex;justify-content:space-between;margin-bottom:3px">
+        <span style="font-size:12px;font-weight:600">Kumon Level</span>
+        <span class="tag t-red" id="kumon-lbl">Level ?</span>
+      </div>
+      <div class="pb-wrap"><div class="pb" id="kumon-pb" style="width:0%;background:#d93025"></div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Activity — all weeks</h3>
+    <div class="sg" id="streak-grid"></div>
+    <div style="display:flex;gap:14px;margin-top:6px;flex-wrap:wrap">
+      <span style="display:flex;align-items:center;gap:4px;font-size:11px;color:var(--text2)"><span style="width:11px;height:11px;border-radius:2px;background:#1a7a4a;display:inline-block"></span>5 days</span>
+      <span style="display:flex;align-items:center;gap:4px;font-size:11px;color:var(--text2)"><span style="width:11px;height:11px;border-radius:2px;background:#1a73e8;display:inline-block"></span>3–4 days</span>
+      <span style="display:flex;align-items:center;gap:4px;font-size:11px;color:var(--text2)"><span style="width:11px;height:11px;border-radius:2px;background:#b5d4f4;display:inline-block"></span>1–2 days</span>
+    </div>
+  </div>
+  <div id="status-box" style="display:none"></div>
+</div>
+
+<!-- SOLL / IST -->
+<div id="sollist" class="sec">
+  <div class="card">
+    <h3>Target / Actual — Comparison</h3>
+    <p style="margin-bottom:12px">What should have been achieved according to plan vs. what has actually been logged.</p>
+    <table class="si-table">
+      <thead><tr><th>Area</th><th>Target</th><th>Actual</th><th>Status</th></tr></thead>
+      <tbody id="si-body"></tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>Weekly Goal Achievement</h3>
+    <div id="weekly-bars"><p>No weeks logged yet.</p></div>
+  </div>
+  <div class="card">
+    <h3>Kumon Target / Actual</h3>
+    <div id="kumon-si"><p>Kumon level not entered yet.</p></div>
+  </div>
+  <div class="card">
+    <h3>Recommendation</h3>
+    <div id="si-rec"><p>Enter data first — recommendations will appear here.</p></div>
+  </div>
+</div>
+
+<!-- WOCHE -->
+<div id="woche" class="sec">
+  <div class="week-nav">
+    <button onclick="prevWeek()">&#8592;</button>
+    <div class="wt" id="week-title">Week 1</div>
+    <button onclick="nextWeek()">&#8594;</button>
+  </div>
+  <div class="day-grid" id="day-grid"></div>
+
+  <!-- SUNDAY CS50 BLOCK rendered separately below grid -->
+  <div id="sunday-block" style="margin-top:7px"></div>
+
+  <div class="card" style="margin-top:10px">
+    <h3>Kumon this week</h3>
+    <div class="kblock">
+      <div style="font-size:12px;font-weight:700;color:#c5221f;margin-bottom:6px">Tuesday — 30 min.</div>
+      <div class="tc" onclick="toggleKumon(0)">
+        <div class="cbox" id="kdi"></div><span class="tlbl" id="kdi-lbl">Session completed</span>
+      </div>
+      <div style="margin-top:6px"><div style="font-size:11px;color:var(--text2);margin-bottom:3px">Error rate:</div>
+        <div id="kdi-scores">
+          <button class="sb" onclick="setKScore('kdi','<5%',this)">&lt;5%</button>
+          <button class="sb" onclick="setKScore('kdi','<10%',this)">&lt;10%</button>
+          <button class="sb" onclick="setKScore('kdi','>10%',this)">&gt;10%</button>
+        </div>
+      </div>
+    </div>
+    <div class="kblock">
+      <div style="font-size:12px;font-weight:700;color:#c5221f;margin-bottom:6px">Friday — 30 min.</div>
+      <div class="tc" onclick="toggleKumon(1)">
+        <div class="cbox" id="kfr"></div><span class="tlbl" id="kfr-lbl">Session completed</span>
+      </div>
+      <div style="margin-top:6px"><div style="font-size:11px;color:var(--text2);margin-bottom:3px">Error rate:</div>
+        <div id="kfr-scores">
+          <button class="sb" onclick="setKScore('kfr','<5%',this)">&lt;5%</button>
+          <button class="sb" onclick="setKScore('kfr','<10%',this)">&lt;10%</button>
+          <button class="sb" onclick="setKScore('kfr','>10%',this)">&gt;10%</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div onclick="toggleReflection()" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;user-select:none">
+      <div>
+        <h3 style="margin:0">Weekly Reflection — Sunday</h3>
+        <p style="font-size:12px;margin-top:3px">Fill in every Sunday after the CS50x lecture.</p>
+      </div>
+      <div id="refl-arrow" style="font-size:18px;color:var(--text2);transition:transform .25s;transform:rotate(0deg)">&#8964;</div>
+    </div>
+
+    <div id="refl-body" style="display:none;margin-top:12px">
+
+    <!-- Khan Academy -->
+    <div class="refl-section" style="border:1px solid var(--border);border-radius:var(--r);padding:0;margin-bottom:8px;border-left:3px solid #1a7a4a;overflow:hidden">
+      <div onclick="toggleSection(this)" style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;cursor:pointer;background:var(--bg)">
+        <span style="font-size:12px;font-weight:700;color:#1a7a4a">Khan Academy Maths</span>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="refl-summary" id="sum-khan" style="font-size:10px;color:var(--text3)"></span>
+          <span class="refl-chevron" style="font-size:14px;color:var(--text3);transition:transform .2s">&#8964;</span>
+        </div>
+      </div>
+      <div class="refl-inner" style="display:none;padding:10px 12px;border-top:1px solid var(--border)">
+        <h4>Unit test score this week</h4>
+        <div id="khan-scores">
+          <button class="sb" onclick="setScore('khan','<70%',this)">&lt;70%</button>
+          <button class="sb" onclick="setScore('khan','70–80%',this)">70–80%</button>
+          <button class="sb" onclick="setScore('khan','80–90%',this)">80–90%</button>
+          <button class="sb" onclick="setScore('khan','>90%',this)">&gt;90%</button>
+          <button class="sb" onclick="setScore('khan','No test',this)">No test</button>
+        </div>
+        <h4>Understanding</h4>
+        <div id="khan-verst">
+          <button class="sb" onclick="setScore('khanV','Not understood',this)">Not understood</button>
+          <button class="sb" onclick="setScore('khanV','Partially',this)">Partially</button>
+          <button class="sb" onclick="setScore('khanV','Understood',this)">Understood</button>
+          <button class="sb" onclick="setScore('khanV','Very confident',this)">Very confident</button>
+        </div>
+        <h4>Khan note (optional)</h4>
+        <textarea class="ri" id="note-khan" rows="1" placeholder="Which topic was difficult?"></textarea>
+      </div>
+    </div>
+
+    <!-- CS50x -->
+    <div class="refl-section" style="border:1px solid var(--border);border-radius:var(--r);padding:0;margin-bottom:8px;border-left:3px solid #1a73e8;overflow:hidden">
+      <div onclick="toggleSection(this)" style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;cursor:pointer;background:var(--bg)">
+        <span style="font-size:12px;font-weight:700;color:#1a73e8">CS50x Harvard</span>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="refl-summary" id="sum-cs50" style="font-size:10px;color:var(--text3)"></span>
+          <span class="refl-chevron" style="font-size:14px;color:var(--text3);transition:transform .2s">&#8964;</span>
+        </div>
+      </div>
+      <div class="refl-inner" style="display:none;padding:10px 12px;border-top:1px solid var(--border)">
+        <h4>Lecture understood?</h4>
+        <div id="cs50-verst">
+          <button class="sb" onclick="setScore('cs50V','Barely',this)">Barely</button>
+          <button class="sb" onclick="setScore('cs50V','Partly',this)">Partly</button>
+          <button class="sb" onclick="setScore('cs50V','Good',this)">Good</button>
+          <button class="sb" onclick="setScore('cs50V','Very good',this)">Very good</button>
+        </div>
+        <h4>Problem Set</h4>
+        <div id="cs50-pset">
+          <button class="sb" onclick="setScore('cs50P','Not started',this)">Not started</button>
+          <button class="sb" onclick="setScore('cs50P','In progress',this)">In progress</button>
+          <button class="sb" onclick="setScore('cs50P','Submitted',this)">Submitted</button>
+        </div>
+        <h4>CS50x note (optional)</h4>
+        <textarea class="ri" id="note-cs50" rows="1" placeholder="What was difficult in the lecture or problem set?"></textarea>
+      </div>
+    </div>
+
+    <!-- Elements / Building AI -->
+    <div class="refl-section" style="border:1px solid var(--border);border-radius:var(--r);padding:0;margin-bottom:8px;border-left:3px solid #6b35d4;overflow:hidden">
+      <div onclick="toggleSection(this)" style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;cursor:pointer;background:var(--bg)">
+        <span style="font-size:12px;font-weight:700;color:#6b35d4">Elements of AI / Building AI</span>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="refl-summary" id="sum-ai" style="font-size:10px;color:var(--text3)"></span>
+          <span class="refl-chevron" style="font-size:14px;color:var(--text3);transition:transform .2s">&#8964;</span>
+        </div>
+      </div>
+      <div class="refl-inner" style="display:none;padding:10px 12px;border-top:1px solid var(--border)">
+        <h4>Chapter this week</h4>
+        <div id="ai-prog">
+          <button class="sb" onclick="setScore('aiP','Not done',this)">Not done</button>
+          <button class="sb" onclick="setScore('aiP','Started',this)">Started</button>
+          <button class="sb" onclick="setScore('aiP','Chapter done',this)">Chapter done</button>
+          <button class="sb" onclick="setScore('aiP','Quiz passed',this)">Quiz passed</button>
+        </div>
+        <h4>AI course note (optional)</h4>
+        <textarea class="ri" id="note-ai" rows="1" placeholder="What surprised or interested you most?"></textarea>
+      </div>
+    </div>
+
+    <!-- Kumon -->
+    <div class="refl-section" style="border:1px solid var(--border);border-radius:var(--r);padding:0;margin-bottom:8px;border-left:3px solid #c5221f;overflow:hidden">
+      <div onclick="toggleSection(this)" style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;cursor:pointer;background:var(--bg)">
+        <span style="font-size:12px;font-weight:700;color:#c5221f">Kumon</span>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="refl-summary" id="sum-kumon" style="font-size:10px;color:var(--text3)"></span>
+          <span class="refl-chevron" style="font-size:14px;color:var(--text3);transition:transform .2s">&#8964;</span>
+        </div>
+      </div>
+      <div class="refl-inner" style="display:none;padding:10px 12px;border-top:1px solid var(--border)">
+        <h4>Both sessions completed?</h4>
+        <div id="kumon-done">
+          <button class="sb" onclick="setScore('kumonW','None',this)">None</button>
+          <button class="sb" onclick="setScore('kumonW','One session',this)">One session</button>
+          <button class="sb" onclick="setScore('kumonW','Both sessions',this)">Both sessions</button>
+        </div>
+        <h4>Overall error rate</h4>
+        <div id="kumon-err">
+          <button class="sb" onclick="setScore('kumonE','>10% — repeat',this)">&gt;10% — repeat</button>
+          <button class="sb" onclick="setScore('kumonE','5–10% — ok',this)">5–10% — ok</button>
+          <button class="sb" onclick="setScore('kumonE','<5% — very good',this)">&lt;5% — very good</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overall week -->
+    <div class="refl-section" style="border:1px solid var(--border);border-radius:var(--r);padding:0;margin-bottom:12px;border-left:3px solid var(--navy);overflow:hidden">
+      <div onclick="toggleSection(this)" style="display:flex;justify-content:space-between;align-items:center;padding:10px 12px;cursor:pointer;background:var(--bg)">
+        <span style="font-size:12px;font-weight:700;color:var(--text)">Overall week</span>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="refl-summary" id="sum-mood" style="font-size:10px;color:var(--text3)"></span>
+          <span class="refl-chevron" style="font-size:14px;color:var(--text3);transition:transform .2s">&#8964;</span>
+        </div>
+      </div>
+      <div class="refl-inner" style="display:none;padding:10px 12px;border-top:1px solid var(--border)">
+        <h4>Motivation & Energy</h4>
+        <div id="mood-scores">
+          <button class="sb" onclick="setScore('mood','Very hard',this)">Very hard</button>
+          <button class="sb" onclick="setScore('mood','Hard',this)">Hard</button>
+          <button class="sb" onclick="setScore('mood','OK',this)">OK</button>
+          <button class="sb" onclick="setScore('mood','Good',this)">Good</button>
+          <button class="sb" onclick="setScore('mood','Great!',this)">Great!</button>
+        </div>
+        <h4>What went well this week?</h4>
+        <textarea class="ri" id="note-gut" rows="2" placeholder="E.g. solved problem set quickly, passed Khan unit test..."></textarea>
+        <h4>What was difficult — and what is the plan for next week?</h4>
+        <textarea class="ri" id="reflect-note" rows="2" placeholder="E.g. review logarithms again, ask in CS50x forum..."></textarea>
+      </div>
+    </div>
+
+    <button class="save-btn" onclick="saveWeek()">Save week</button>
+    </div><!-- /refl-body -->
+  </div>
+</div>
+
+<!-- KUMON -->
+<div id="kumon" class="sec">
+  <div class="card">
+    <h3>Current Kumon Level</h3>
+    <p style="margin-bottom:10px">Found in the top right of the worksheet.</p>
+    <div class="er"><span class="el">Select level</span>
+      <select id="kumon-current">
+        <option value="">— select —</option>
+        <option>F</option><option>G</option><option>H</option><option>I</option>
+        <option>J</option><option>K</option><option>L</option><option>M</option><option>N</option><option>O</option>
+      </select>
+    </div>
+    <button class="save-btn" onclick="saveKumonLevel()">Save level</button>
+  </div>
+  <div class="card">
+    <h3>Year Goals 2026</h3>
+    <div class="kl-row"><div class="klb">Apr–May</div><div class="kb-wrap"><div class="kb" id="kbar-1" style="width:0%"></div></div><span class="tag t-red">Target: K</span></div>
+    <div class="kl-row"><div class="klb">Jun–Jul</div><div class="kb-wrap"><div class="kb" id="kbar-2" style="width:0%"></div></div><span class="tag t-red">Target: K+</span></div>
+    <div class="kl-row"><div class="klb">Aug–Sep</div><div class="kb-wrap"><div class="kb" id="kbar-3" style="width:0%"></div></div><span class="tag t-red">Target: L</span></div>
+    <div class="kl-row"><div class="klb">Oct–Dec</div><div class="kb-wrap"><div class="kb" id="kbar-4" style="width:0%;background:#1a7a4a"></div></div><span class="tag t-green">Target: L–M</span></div>
+    <p style="margin-top:10px;font-size:12px">Long-term: Level O before IB 2028 = maximum head start in Maths AA HL.</p>
+  </div>
+  <div class="card">
+    <h3>Errorquoten-History</h3>
+    <div id="kumon-history"><p>No sessions logged yet.</p></div>
+  </div>
+</div>
+
+<!-- MILESTONES -->
+<div id="meilensteine" class="sec">
+  <div class="card"><h3>Milestones 2026</h3><div id="ms-list"></div></div>
+  <div class="card">
+    <h3>Overall Progress</h3>
+    <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:6px">
+      <span style="font-size:28px;font-weight:700" id="ms-count">0</span>
+      <span style="font-size:13px;color:var(--text2)">of 9 milestones reached</span>
+    </div>
+    <div class="pb-wrap" style="height:10px"><div class="pb" id="ms-bar" style="width:0%;background:#d93025"></div></div>
+  </div>
+</div>
+
+<!-- HISTORY -->
+<div id="verlauf" class="sec">
+  <div class="card">
+    <h3>Update Course Progress</h3>
+    <div class="er"><span class="el">CS50x Week</span><input type="number" id="cs50-input" min="0" max="11" placeholder="0–11" style="width:70px"></div>
+    <div class="er"><span class="el">Khan Chapter</span>
+      <select id="khan-sel">
+        <option value="0">Start</option><option value="1">Algebra 2</option>
+        <option value="2">Trigonometry</option><option value="3">Precalculus</option>
+        <option value="4">Calculus AB</option><option value="5">Calculus BC</option>
+      </select>
+    </div>
+    <div class="er"><span class="el">Elements of AI</span><input type="number" id="eai-input" min="0" max="6" placeholder="0–6" style="width:70px"></div>
+    <button class="save-btn" onclick="saveProgress()">Save</button>
+  </div>
+  <div class="card"><h3>Weekly History</h3><div id="history-list"><p>No weeks logged yet.</p></div></div>
+</div>
+
+<!-- ADAPT -->
+<div id="adapt" class="sec">
+  <div class="card" style="border:2px solid var(--blue)">
+    <div style="background:var(--blue-l);border-radius:var(--r);padding:8px 12px;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#1a73e8" stroke-width="1.5"/><path d="M8 5v4M8 11v.5" stroke="#1a73e8" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span style="font-size:12px;font-weight:700;color:var(--blue)">Adaptive Learning Engine</span>
+    </div>
+    <p style="margin-bottom:12px">Enter your Khan Academy placement test result — the tracker will automatically adjust the recommended pace for all following weeks.</p>
+    <h4>Step 1: Placement test score (Khan Academy)</h4>
+    <div id="place-scores" style="margin-bottom:10px">
+      <button class="sb" onclick="setPlacement('<50%',this)">&lt;50%</button>
+      <button class="sb" onclick="setPlacement('50–69%',this)">50–69%</button>
+      <button class="sb" onclick="setPlacement('70–79%',this)">70–79%</button>
+      <button class="sb" onclick="setPlacement('80–89%',this)">80–89%</button>
+      <button class="sb" onclick="setPlacement('≥90%',this)">≥90%</button>
+    </div>
+    <h4>Step 2: Which course did you start in?</h4>
+    <div id="place-course" style="margin-bottom:10px">
+      <button class="sb" onclick="setPlaceCourse('Algebra 2',this)">Algebra 2</button>
+      <button class="sb" onclick="setPlaceCourse('Trigonometry',this)">Trigonometry</button>
+      <button class="sb" onclick="setPlaceCourse('Precalculus',this)">Precalculus</button>
+      <button class="sb" onclick="setPlaceCourse('Calculus AB',this)">Calculus AB</button>
+    </div>
+    <div id="placement-rec" style="display:none;margin-bottom:10px"></div>
+    <button class="save-btn" onclick="savePlacement()">Save & get recommendation</button>
+  </div>
+
+  <div class="card" id="adapt-plan-card" style="display:none">
+    <h3>Your adapted learning plan</h3>
+    <div id="adapt-plan-body"></div>
+  </div>
+
+  <div class="card">
+    <h3>Weekly performance check</h3>
+    <p style="margin-bottom:10px">Fill in after saving each week — the tracker adjusts next week's recommendation automatically.</p>
+    <h4>Average Khan score (last 3 weeks)</h4>
+    <div id="perf-scores">
+      <button class="sb" onclick="setPerf('<70%',this)">&lt;70%</button>
+      <button class="sb" onclick="setPerf('70–79%',this)">70–79%</button>
+      <button class="sb" onclick="setPerf('80–89%',this)">80–89%</button>
+      <button class="sb" onclick="setPerf('≥90%',this)">≥90%</button>
+    </div>
+    <h4>CS50x problem sets</h4>
+    <div id="perf-cs50">
+      <button class="sb" onclick="setPerfCS('Behind 2+ weeks',this)">Behind 2+ weeks</button>
+      <button class="sb" onclick="setPerfCS('Behind 1 week',this)">Behind 1 week</button>
+      <button class="sb" onclick="setPerfCS('On track',this)">On track</button>
+      <button class="sb" onclick="setPerfCS('Ahead',this)">Ahead</button>
+    </div>
+    <h4>Kumon error rate trend</h4>
+    <div id="perf-kumon">
+      <button class="sb" onclick="setPerfKumon('Getting worse',this)">Getting worse</button>
+      <button class="sb" onclick="setPerfKumon('Stable',this)">Stable</button>
+      <button class="sb" onclick="setPerfKumon('Improving',this)">Improving</button>
+    </div>
+    <button class="save-btn" onclick="runAdaptEngine()" style="margin-top:10px">Get this week's recommendation</button>
+    <div id="adapt-result" style="margin-top:10px"></div>
+  </div>
+
+  <div class="card">
+    <h3>Adaptation history</h3>
+    <div id="pace-history"><p style="font-size:13px;color:var(--text2)">No adaptations logged yet.</p></div>
+  </div>
+</div>
+
+<!-- AI REVIEW -->
+<div id="review" class="sec">
+
+  <div class="card" style="border:2px solid #6b35d4">
+    <div style="background:#f0ebff;border-radius:var(--r);padding:8px 12px;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13z" stroke="#6b35d4" stroke-width="1.5"/><path d="M5.5 6.5C5.5 5.1 6.6 4 8 4s2.5 1.1 2.5 2.5c0 1.5-1.5 2-1.5 3" stroke="#6b35d4" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11.5" r=".75" fill="#6b35d4"/></svg>
+      <span style="font-size:12px;font-weight:700;color:#6b35d4">AI Learning Path Analysis</span>
+    </div>
+    <p style="margin-bottom:10px">This generates a structured report of all your learning data. Copy it and paste it into a new Claude chat to get a personalised analysis and updated recommendations for your learning path.</p>
+    <div style="font-size:12px;color:var(--text2);background:var(--bg2);border-radius:var(--r);padding:8px 10px;margin-bottom:12px">
+      <strong style="color:var(--text)">How to use:</strong> Click "Generate Report" below → select all text in the box → copy → open Claude.ai → paste and send. Claude will analyse your progress and suggest specific adjustments.
+    </div>
+
+    <h4>Select weeks to include</h4>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px" id="week-range">
+      <button class="sb sel" onclick="setRange('all',this)">All weeks</button>
+      <button class="sb" onclick="setRange('last4',this)">Last 4 weeks</button>
+      <button class="sb" onclick="setRange('last8',this)">Last 8 weeks</button>
+    </div>
+
+    <h4>Include in report</h4>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px" id="include-opts">
+      <button class="sb sel" id="inc-khan" onclick="toggleInc('khan',this)">Khan scores</button>
+      <button class="sb sel" id="inc-cs50" onclick="toggleInc('cs50',this)">CS50x progress</button>
+      <button class="sb sel" id="inc-ai" onclick="toggleInc('ai',this)">AI courses</button>
+      <button class="sb sel" id="inc-kumon" onclick="toggleInc('kumon',this)">Kumon</button>
+      <button class="sb sel" id="inc-mood" onclick="toggleInc('mood',this)">Mood & notes</button>
+      <button class="sb sel" id="inc-adapt" onclick="toggleInc('adapt',this)">Pace history</button>
+    </div>
+
+    <button class="save-btn" onclick="generateReport()" style="background:#6b35d4">Generate AI Report</button>
+  </div>
+
+  <div id="report-output" style="display:none">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+        <h3 style="margin:0">Your learning report</h3>
+        <button onclick="copyReport()" style="font-size:12px;padding:6px 14px;border:1px solid #6b35d4;border-radius:var(--r);background:#f0ebff;color:#6b35d4;cursor:pointer;font-weight:700" id="copy-btn">Copy report</button>
+      </div>
+      <p style="font-size:12px;margin-bottom:8px">Select all text below and copy, or use the button above:</p>
+      <textarea id="report-text" readonly style="width:100%;font-size:11px;padding:10px;border:1px solid var(--border2);border-radius:var(--r);background:var(--bg2);color:var(--text);resize:vertical;min-height:320px;font-family:monospace;line-height:1.5"></textarea>
+    </div>
+
+    <div class="card" style="border-left:3px solid #6b35d4">
+      <h3>Paste this prompt into Claude</h3>
+      <p style="margin-bottom:8px">After pasting the report, also send this prompt for the best analysis:</p>
+      <div style="background:var(--bg2);border-radius:var(--r);padding:10px 12px;font-size:12px;color:var(--text2);font-style:italic;line-height:1.6" id="suggested-prompt"></div>
+      <button onclick="copyPrompt()" style="font-size:12px;padding:5px 14px;border:1px solid #6b35d4;border-radius:var(--r);background:#f0ebff;color:#6b35d4;cursor:pointer;font-weight:700;margin-top:8px">Copy prompt</button>
+    </div>
+  </div>
+
+</div>
+
+</div><!-- /app -->
+
+<script>
+const START = new Date(2026,3,6);
+
+// CS50x lecture links per week
+const CS50_LINKS = [
+  {week:'Week 0',title:'Scratch — Introduction',url:'https://cs50.harvard.edu/x/2024/weeks/0/'},
+  {week:'Week 1',title:'C — Basics',url:'https://cs50.harvard.edu/x/2024/weeks/1/'},
+  {week:'Week 2',title:'Arrays',url:'https://cs50.harvard.edu/x/2024/weeks/2/'},
+  {week:'Week 3',title:'Algorithms',url:'https://cs50.harvard.edu/x/2024/weeks/3/'},
+  {week:'Week 4',title:'Memory',url:'https://cs50.harvard.edu/x/2024/weeks/4/'},
+  {week:'Week 5',title:'Data Structures',url:'https://cs50.harvard.edu/x/2024/weeks/5/'},
+  {week:'Week 6',title:'Python',url:'https://cs50.harvard.edu/x/2024/weeks/6/'},
+  {week:'Week 7',title:'SQL',url:'https://cs50.harvard.edu/x/2024/weeks/7/'},
+  {week:'Week 8',title:'HTML, CSS, JavaScript',url:'https://cs50.harvard.edu/x/2024/weeks/8/'},
+  {week:'Week 9',title:'Flask (Web Backend)',url:'https://cs50.harvard.edu/x/2024/weeks/9/'},
+  {week:'Week 10',title:'Ethics & AI',url:'https://cs50.harvard.edu/x/2024/weeks/ai/'},
+  {week:'Final Project',title:'Final Project',url:'https://cs50.harvard.edu/x/2024/project/'},
+];
+
+// Week data — Sunday is CS50 lecture day (2h), Mo/We/Fr/Sa = Khan + AI
+// Task format: 'COURSE [URL]: description (time)'
+// URLs in tasks are parsed by COURSE_LINK_MAP for button links
+const WEEKS = [
+  {label:'W01  06–12 Apr 2026',cs50idx:0,
+   mo:[
+     'Khan Placement Test [https://www.khanacademy.org/math/algebra2]: Take the Course Challenge to find your starting level (30 min.)',
+     'Khan Algebra 2 [https://www.khanacademy.org/math/algebra2]: Browse Unit 1 — Polynomial Arithmetic to understand what is ahead (30 min.)',
+   ],
+   mi:[
+     'Khan Algebra 2 — Unit 1 [https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:poly-arithmetic]: Start Polynomial Arithmetic — watch videos + do exercises (30 min.)',
+     'Elements of AI — Ch.1 [https://course.elementsofai.com/1]: What is AI? Read chapter + complete quiz (30 min.)',
+   ],
+   fr:[
+     'Khan Algebra 2 — Unit 1 [https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:poly-arithmetic]: Continue exercises, aim ≥80% on unit (30 min.)',
+   ],
+   sa:[
+     'CS50x Scratch [https://scratch.mit.edu]: Finish Scratch project + submit via cs50.me/submit (30 min.)',
+   ]},
+
+  {label:'W02  13–19 Apr 2026',cs50idx:1,
+   mo:[
+     'Khan Algebra 2 — Unit 2 [https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:poly-factor]: Polynomial Factoring — videos + exercises (30 min.)',
+     'Khan Algebra 2 — Unit 2 [https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:poly-factor]: Continue factoring exercises (30 min.)',
+   ],
+   mi:[
+     'Khan Algebra 2 — Unit 2 [https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:poly-factor]: Unit test — target ≥80% (30 min.)',
+     'Elements of AI — Ch.2 [https://course.elementsofai.com/2]: AI Problem Solving — read + quiz (30 min.)',
+   ],
+   fr:[
+     'CS50x — Pset 1 [https://cs50.harvard.edu/x/2024/psets/1/]: Start Hello + Mario — read spec carefully first (30 min.)',
+   ],
+   sa:[
+     'CS50x — Pset 1 [https://cs50.harvard.edu/x/2024/psets/1/]: Finish + submit Mario via submit.cs50.io (30 min.)',
+   ]},
+
+  {label:'W03  20–26 Apr 2026',cs50idx:2,
+   mo:[
+     'Khan Algebra 2 — Unit 3 [https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:poly-graphs]: Polynomial Graphs — videos + exercises (30 min.)',
+     'Khan Algebra 2 — Unit 3 [https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:poly-graphs]: Continue graphing exercises (30 min.)',
+   ],
+   mi:[
+     'Khan Algebra 2 — Unit 3 [https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:poly-graphs]: Unit test — check score ≥80% (30 min.)',
+     'Elements of AI — Ch.3 [https://course.elementsofai.com/3]: Machine Learning — read + quiz (30 min.)',
+   ],
+   fr:[
+     'CS50x — Pset 2 [https://cs50.harvard.edu/x/2024/psets/2/]: Start Readability or Caesar — read spec (30 min.)',
+   ],
+   sa:[
+     'CS50x — Pset 2 [https://cs50.harvard.edu/x/2024/psets/2/]: Finish + submit via submit.cs50.io (30 min.)',
+   ]},
+
+  {label:'W04  27 Apr–03 May 2026',cs50idx:3,
+   mo:[
+     'Khan Algebra 2 — Unit 4 [https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:rational]: Rational Functions — videos + exercises (30 min.)',
+     'Khan Algebra 2 — Unit 4 [https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:rational]: Continue rational function exercises (30 min.)',
+   ],
+   mi:[
+     'Khan Algebra 2 — Units 3+4 [https://www.khanacademy.org/math/algebra2]: Unit tests — both ≥80% before moving on (30 min.)',
+     'Elements of AI — Ch.4 [https://course.elementsofai.com/4]: Neural Networks — read + quiz (30 min.)',
+   ],
+   fr:[
+     'CS50x — Pset 3 [https://cs50.harvard.edu/x/2024/psets/3/]: Start Plurality or Runoff — read spec (30 min.)',
+   ],
+   sa:[
+     'CS50x — Pset 3 [https://cs50.harvard.edu/x/2024/psets/3/]: Finish + submit via submit.cs50.io (30 min.)',
+   ]},
+
+  {label:'W05  04–10 May 2026',cs50idx:4,
+   mo:[
+     'Khan Trigonometry — Unit 1 [https://www.khanacademy.org/math/trigonometry/trig-with-general-triangles]: Right triangles + sin/cos/tan — videos + exercises (30 min.)',
+     'Khan Trigonometry — Unit 1 [https://www.khanacademy.org/math/trigonometry/unit-circle-definition-of-trig-functions]: Unit circle — work through all exercises (30 min.)',
+   ],
+   mi:[
+     'Khan Trigonometry — Unit 1 [https://www.khanacademy.org/math/trigonometry/trig-with-general-triangles]: Unit test — target ≥80% (30 min.)',
+     'Elements of AI — Ch.5 [https://course.elementsofai.com/5]: AI in Practice — read + quiz (30 min.)',
+   ],
+   fr:[
+     'CS50x — Pset 4 [https://cs50.harvard.edu/x/2024/psets/4/]: Start Filter (Less or More) — read spec (30 min.)',
+   ],
+   sa:[
+     'CS50x — Pset 4 [https://cs50.harvard.edu/x/2024/psets/4/]: Finish + submit via submit.cs50.io (30 min.)',
+   ]},
+
+  {label:'W06  11–17 May 2026',cs50idx:5,
+   mo:[
+     'Khan Trigonometry — Unit 2 [https://www.khanacademy.org/math/trigonometry/trig-function-graphs]: Graphs of sin/cos/tan — videos + exercises (30 min.)',
+     'Khan Trigonometry — Unit 2 [https://www.khanacademy.org/math/trigonometry/trig-function-graphs]: Continue graphing exercises (30 min.)',
+   ],
+   mi:[
+     'Khan Trigonometry — Unit 2 [https://www.khanacademy.org/math/trigonometry/trig-function-graphs]: Unit test ≥80% (30 min.)',
+     'Elements of AI — Ch.6 [https://course.elementsofai.com/6]: AI & Society — final chapter + quiz (30 min.)',
+   ],
+   fr:[
+     'CS50x — Pset 5 [https://cs50.harvard.edu/x/2024/psets/5/]: Start Inheritance or Speller — read spec (30 min.)',
+   ],
+   sa:[
+     'CS50x — Pset 5 [https://cs50.harvard.edu/x/2024/psets/5/]: Finish + submit — MILESTONE: Download EoAI Certificate from elementsofai.com! (30 min.)',
+   ]},
+
+  {label:'W07  18–24 May 2026',cs50idx:6,
+   mo:[
+     'Khan Precalculus — Unit 1 [https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:composite]: Composite Functions — videos + exercises (30 min.)',
+     'Khan Precalculus — Unit 1 [https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:composite]: Continue composite function exercises (30 min.)',
+   ],
+   mi:[
+     'Khan Precalculus — Unit 2 [https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:logs]: Introduction to Logarithms — videos + exercises (30 min.)',
+     'Building AI — Ch.1 [https://buildingai.elementsofai.com/I-Kickstarting-AI/logistic-regression]: Regression — first chapter with real Python code (30 min.)',
+   ],
+   fr:[
+     'CS50x — Pset 6 [https://cs50.harvard.edu/x/2024/psets/6/]: Start DNA (Python version) — read spec (30 min.)',
+   ],
+   sa:[
+     'CS50x — Pset 6 [https://cs50.harvard.edu/x/2024/psets/6/]: Finish + submit — MILESTONE: Upload Python script to GitHub! (30 min.)',
+   ]},
+
+  {label:'W08  25–31 May 2026',cs50idx:7,
+   mo:[
+     'Khan Precalculus — Unit 2 [https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:logs]: Logarithm properties + equations — videos + exercises (30 min.)',
+     'Khan Precalculus — Unit 2 [https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:logs]: Log exercises — continue until confident (30 min.)',
+   ],
+   mi:[
+     'Khan Precalculus — Unit 2 [https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:logs]: Logarithms unit test ≥80% (30 min.)',
+     'Building AI — Ch.2 [https://buildingai.elementsofai.com/II-Regression/simple-linear-regression]: Linear Regression — read + exercises (30 min.)',
+   ],
+   fr:[
+     'CS50x — Pset 7 [https://cs50.harvard.edu/x/2024/psets/7/]: Start Movies (SQL) — read spec (30 min.)',
+   ],
+   sa:[
+     'CS50x — Pset 7 [https://cs50.harvard.edu/x/2024/psets/7/]: Finish + submit Movies via submit.cs50.io (30 min.)',
+   ]},
+
+  {label:'W09  01–07 Jun 2026',cs50idx:8,
+   mo:[
+     'Khan Precalculus — Unit 3 [https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:exp]: Exponential Functions — videos + exercises (30 min.)',
+     'Khan Precalculus — Unit 3 [https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:exp]: Continue exponential exercises (30 min.)',
+   ],
+   mi:[
+     'Khan Precalculus — Unit 3 [https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:exp]: Unit test ≥80% — MILESTONE: Building AI Certificate! (30 min.)',
+     'Building AI — Ch.3+4 [https://buildingai.elementsofai.com/III-Neural-networks/neurons]: Neural Networks — finish course + download certificate (30 min.)',
+   ],
+   fr:[
+     'CS50x — Pset 8 [https://cs50.harvard.edu/x/2024/psets/8/]: Start Trivia (HTML/CSS/JS) — read spec (30 min.)',
+   ],
+   sa:[
+     'CS50x — Pset 8 [https://cs50.harvard.edu/x/2024/psets/8/]: Finish + submit — your first website is live! (30 min.)',
+   ]},
+
+  {label:'W10  08–14 Jun 2026',cs50idx:9,
+   mo:[
+     'Khan Precalculus — Unit 4 [https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:trig]: Trigonometric Equations — videos + exercises (30 min.)',
+     'Khan Precalculus — Unit 4 [https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:trig]: Continue trig equation exercises (30 min.)',
+   ],
+   mi:[
+     'Khan Precalculus [https://www.khanacademy.org/math/precalculus]: Check all units — every unit ≥80% before Final Project week (30 min.)',
+     'CS50x Final Project [https://cs50.harvard.edu/x/2024/project/]: Read spec + choose your project idea (30 min.)',
+   ],
+   fr:[
+     'CS50x Final Project [https://cs50.harvard.edu/x/2024/project/]: Build project skeleton — file structure + basic functionality (30 min.)',
+   ],
+   sa:[
+     'CS50x Final Project [https://cs50.harvard.edu/x/2024/project/]: Develop main features (30 min.)',
+   ]},
+
+  {label:'W11  15–21 Jun 2026',cs50idx:10,
+   mo:[
+     'Khan Precalculus — Unit 5 [https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:matrices]: Matrices — last Precalculus chapter (30 min.)',
+     'Khan Precalculus [https://www.khanacademy.org/math/precalculus]: All units ≥80%? Final check before Calculus (30 min.)',
+   ],
+   mi:[
+     'Yale Financial Markets — Week 1 [https://www.coursera.org/learn/financial-markets-global]: Enrol free + watch first lecture by Robert Shiller (30 min.)',
+     'CS50x Final Project [https://cs50.harvard.edu/x/2024/project/]: Complete + record 2-min demo video (required for submission) (30 min.)',
+   ],
+   fr:[
+     'CS50x Final Project [https://cs50.harvard.edu/x/2024/project/]: SUBMIT Final Project via submit.cs50.io (30 min.)',
+   ],
+   sa:[
+     'MILESTONE: Download Harvard CS50x Certificate from cs50.harvard.edu/certificates (30 min.)',
+   ]},
+
+  {label:'W12  22–28 Jun 2026',cs50idx:11,
+   mo:[
+     'Khan AP Calculus AB — Unit 1 [https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new]: Limits — videos + exercises (30 min.)',
+     'Khan AP Calculus AB — Unit 1 [https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new]: Continue limits exercises (30 min.)',
+   ],
+   mi:[
+     'Yale Financial Markets — Week 2 [https://www.coursera.org/learn/financial-markets-global]: Watch Week 2 lecture + quiz (30 min.)',
+     'Kangaroo Maths [https://www.känguru-mathe.de/aufgaben]: Register for next competition + solve 5 past paper problems (30 min.)',
+   ],
+   fr:[
+     'Khan AP Calculus AB — Unit 1 [https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new]: Unit test — target ≥80% (30 min.)',
+   ],
+   sa:[
+     'Yale Financial Markets [https://www.coursera.org/learn/financial-markets-global]: Week 2 quiz + mid-year learning review (30 min.)',
+   ]},
+];
+
+const DAYS_CFG = [
+  {key:'mo',label:'Monday',time:'60 min.',color:'#1a73e8'},
+  {key:'mi',label:'Wednesday',time:'60 min.',color:'#1a73e8'},
+  {key:'fr',label:'Friday',time:'30 min.',color:'#1a7a4a'},
+  {key:'sa',label:'Saturday',time:'30 min.',color:'#1a7a4a'},
+];
+
+// Specific course links — matched by keyword in task text, most specific first
+// Extract embedded [URLs] directly from task text
+function linksForTasks(tasks){
+  const seen=new Set();
+  const links=[];
+  tasks.forEach(t=>{
+    const m=t.match(/^([^\[]+)\[([^\]]+)\]/);
+    if(m){
+      const url=m[2];
+      if(url.startsWith('http')&&!seen.has(url)){
+        seen.add(url);
+        const label=m[1].replace(/—\s*$/,'').trim().substring(0,38);
+        const color=
+          url.includes('khanacademy')?'#1a7a4a':
+          url.includes('cs50.harvard')||url.includes('scratch.mit')||url.includes('submit.cs50')?'#1a73e8':
+          url.includes('buildingai')?'#0d7377':
+          url.includes('elementsofai')?'#6b35d4':
+          url.includes('coursera')?'#b06000':
+          url.includes('känguru')||url.includes('xn--knguru')?'#c5221f':'#5f6368';
+        links.push({text:label,url,color});
+      }
+    }
+  });
+  return links;
+}
+
+// Strip [URL] from task text for display
+function cleanTask(t){return t.replace(/\s*\[[^\]]+\]/,'').trim();}
+
+
+const MILESTONES = [
+  {title:'Khan Placement Test completed',sub:'April 2026'},
+  {title:'CS50x Week 0 (Scratch) abgegeben',sub:'April 2026'},
+  {title:'Elements of AI Certificate',sub:'Target: June 2026'},
+  {title:'Python-Skript auf GitHub',sub:'Target: July 2026'},
+  {title:'Building AI Certificate',sub:'Target: August 2026'},
+  {title:'Harvard CS50x Certificate',sub:'Target: October 2026'},
+  {title:'Khan Precalculus ≥80%',sub:'Target: October 2026'},
+  {title:'Kumon Level L–M reached',sub:'Target: December 2026'},
+  {title:'Kangaroo Mathsmatics — participation',sub:'Target: March 2027'},
+];
+
+const SOLL = [
+  [0,0,0,0],[0,0,1,2],[1,0,1,4],[2,1,2,6],[3,1,2,8],
+  [4,1,3,10],[5,2,3,12],[6,2,4,14],[7,3,5,16],[8,3,5,18],
+  [9,3,6,20],[10,3,6,22],[11,4,6,24],
+];
+const KHAN_NAMES=['Start','Algebra 2','Trigonometry','Precalculus','Calculus AB','Calculus BC'];
+const KUMON_LVL=['','F','G','H','I','J','K','L','M','N','O'];
+
+let S={
+  cw:0, weeks:{},
+  kumon:{level:'',sessions:[]},
+  ms:Array(9).fill(false),
+  prog:{cs:0,kh:0,ea:0},
+  adapt:{
+    placementScore:'', placementCourse:'',
+    perfScore:'', perfCS50:'', perfKumon:'',
+    history:[], currentPace:'standard'
+  }
+};
+function load(){try{const d=localStorage.getItem('lt2026v2');if(d)S=JSON.parse(d);}catch(e){}}
+function save(){try{localStorage.setItem('lt2026v2',JSON.stringify(S));}catch(e){}}
+function totalKumon(){return Object.values(S.weeks).reduce((n,w)=>n+(w.kdi?1:0)+(w.kfr?1:0),0);}
+function wd(){
+  if(!S.weeks[S.cw]) S.weeks[S.cw]={
+    checks:{},kdi:false,kfr:false,kdiScore:'',kfrScore:'',
+    khanScore:'',khanV:'',cs50V:'',cs50P:'',aiP:'',
+    kumonW:'',kumonE:'',mood:'',
+    noteKhan:'',noteCs50:'',noteAi:'',noteGut:'',note:''
+  };
+  return S.weeks[S.cw];
+}
+function planWeek(){return Math.max(0,Math.min(Math.floor((new Date()-START)/(1000*60*60*24*7)),SOLL.length-1));}
+
+function updateTabStatus(){
+  // Week tab — green when all tasks done
+  const w=WEEKS[S.cw]||WEEKS[0];
+  const d=wd();
+  let totalTasks=0;
+  DAYS_CFG.forEach(dc=>{ totalTasks+=(w[dc.key]||[]).length; });
+  totalTasks+=1;
+  const doneTasks=Object.values(d.checks||{}).filter(Boolean).length+(d.cs50done?1:0);
+  const weekDone=doneTasks>0&&doneTasks>=totalTasks;
+  const tabWoche=document.getElementById('tab-woche');
+  if(tabWoche){
+    tabWoche.classList.toggle('done',weekDone);
+    tabWoche.textContent=weekDone?'Week ✓':'Week';
+  }
+  // Target/Actual tab — green when all on track or ahead
+  const pw=planWeek();
+  const soll=SOLL[Math.min(pw,SOLL.length-1)];
+  const ist_cs=S.prog.cs||0,ist_kh=S.prog.kh||0,ist_ea=S.prog.ea||0,ist_ku=totalKumon();
+  const wksLogged=Object.keys(S.weeks).length;
+  const avgDays=wksLogged>0?(Object.values(S.weeks).reduce((n,wx)=>n+Object.values(wx.checks||{}).filter(Boolean).length+(wx.cs50done?1:0),0)/wksLogged):0;
+  const cs50Done=Object.values(S.weeks).filter(wx=>wx.cs50done).length;
+  const allGood=ist_cs>=soll[0]&&ist_kh>=soll[1]&&ist_ea>=soll[2]&&ist_ku>=soll[3]&&cs50Done>=pw&&avgDays>=3;
+  const tabSI=document.getElementById('tab-sollist');
+  if(tabSI){
+    tabSI.classList.toggle('done',allGood);
+    tabSI.textContent=allGood?'Target / Actual ✓':'Target / Actual';
+  }
+}
+
+function showTab(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');btn.classList.add('active');
+  if(id==='woche')renderWeek();
+  if(id==='dashboard')updateDash();
+  if(id==='verlauf')renderHistory();
+  if(id==='meilensteine')renderMs();
+  if(id==='kumon')renderKumon();
+  if(id==='sollist')renderTargetActual();
+  if(id==='adapt'){renderAdapt();}
+  if(id==='review'){renderReview();}
+}
+
+function renderWeek(){
+  const w=WEEKS[S.cw]||WEEKS[0];
+  const d=wd();
+
+  // Count total tasks for this week
+  let totalTasks=0;
+  DAYS_CFG.forEach(dc=>{ totalTasks+=(w[dc.key]||[]).length; });
+  totalTasks+=1; // CS50 Sunday lecture checkbox
+  const doneTasks=Object.values(d.checks||{}).filter(Boolean).length+(d.cs50done?1:0);
+  const weekComplete=doneTasks>0&&doneTasks>=totalTasks;
+
+  // Week title + nav background
+  const wt=document.getElementById('week-title');
+  const nav=document.querySelector('.week-nav');
+  if(wt) wt.textContent=w.label+(weekComplete?' ✓':'');
+  if(nav){
+    nav.style.background=weekComplete?'var(--green-l)':'transparent';
+    nav.style.borderRadius=weekComplete?'var(--r)':'0';
+    nav.style.padding=weekComplete?'8px 10px':'0';
+    nav.style.marginBottom='12px';
+    if(wt) wt.style.color=weekComplete?'var(--green)':'var(--text)';
+  }
+  // Mo/Mi/Fr/Sa grid
+  const grid=document.getElementById('day-grid');
+  grid.innerHTML='';
+  DAYS_CFG.forEach(dc=>{
+    const tasks=w[dc.key]||[];
+    const cell=document.createElement('div');
+    cell.className='day-cell';
+    cell.style.borderTop=`3px solid ${dc.color}`;
+    const dynLinks=linksForTasks(tasks);
+    const linkHtml=dynLinks.map(l=>`<a href="${l.url}" target="_blank" style="font-size:10px;font-weight:700;padding:2px 6px;border-radius:5px;text-decoration:none;background:${l.color}22;color:${l.color};border:1px solid ${l.color}55;white-space:nowrap">${l.text} ↗</a>`).join('');
+    let h=`<div class="day-hdr" style="color:${dc.color};flex-direction:column;align-items:flex-start;gap:5px"><div style="display:flex;justify-content:space-between;width:100%">${dc.label}<span style="font-size:10px;color:var(--text3)">${dc.time}</span></div>${dynLinks.length?`<div style="display:flex;gap:4px;flex-wrap:wrap">${linkHtml}</div>`:''}</div>`;
+    tasks.forEach((t,ti)=>{
+      const k=`${dc.key}_${ti}`;const done=d.checks&&d.checks[k];
+      const isMs=t.includes('MILESTONE');
+      const display=cleanTask(t);
+      h+=`<div class="tc" onclick="toggleTask('${dc.key}',${ti})" style="${isMs?'background:#fce8e6;border-radius:4px;padding:2px 4px':''}">
+        <div class="cbox${done?' done':''}">${done?'✓':''}</div>
+        <span class="tlbl${done?' done':''}" style="color:${isMs?'#c5221f':done?'var(--text3)':dc.color};font-size:10.5px">${display}</span>
+      </div>`;
+    });
+    cell.innerHTML=h;grid.appendChild(cell);
+  });
+  // Sunday CS50 lecture block
+  const cs50=CS50_LINKS[w.cs50idx]||CS50_LINKS[0];
+  const sb=document.getElementById('sunday-block');
+  const done_cs50=d.cs50done;
+  sb.innerHTML=`<div class="sunday-card">
+    <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:8px;display:flex;justify-content:space-between;align-items:center">
+      <span>Sunday — CS50x Lecture (approx. 2 hours)</span>
+      <span style="font-size:10px;color:var(--text2)">in one sitting</span>
+    </div>
+    <a class="sunday-lecture-link" href="${cs50.url}" target="_blank">
+      <div class="play-icon">
+        <svg width="12" height="14" viewBox="0 0 12 14" fill="white"><path d="M0 0l12 7-12 7z"/></svg>
+      </div>
+      <div>
+        <div class="sll-text">CS50x ${cs50.week}: ${cs50.title}</div>
+        <div class="sll-sub">cs50.harvard.edu — go to lecture</div>
+      </div>
+    </a>
+    <div class="tc" onclick="toggleCS50()" style="background:var(--bg);border-radius:6px;padding:6px 8px">
+      <div class="cbox${done_cs50?' done':''}" id="cs50-check">${done_cs50?'✓':''}</div>
+      <span class="tlbl${done_cs50?' done':''}" id="cs50-lbl-week">Lecture fully watched + notes taken</span>
+    </div>
+    <div style="margin-top:6px;font-size:11px;color:var(--blue-d,var(--blue));padding:5px 8px;background:rgba(26,115,232,.08);border-radius:5px">
+      Tip: The lecture is divided into chapters — take a short break at each chapter change and write notes.
+    </div>
+  </div>`;
+  // Kumon
+  ['di','fr'].forEach((x,i)=>{
+    const b=document.getElementById(`k${x}`);const l=document.getElementById(`k${x}-lbl`);
+    const val=i===0?d.kdi:d.kfr;
+    if(b){b.className='cbox'+(val?' done':'');b.textContent=val?'✓':'';}
+    if(l)l.className='tlbl'+(val?' done':'');
+    const sc=document.getElementById(`k${x}-scores`);const cur=i===0?d.kdiScore:d.kfrScore;
+    if(sc&&cur)sc.querySelectorAll('.sb').forEach(btn=>btn.classList.toggle('sel',btn.textContent.replace(/[<>]/g,'').trim()===cur.replace(/[<>]/g,'').trim()));
+  });
+  // Restore all score buttons
+  // Restore reflection button selections - map stateKey -> element ID
+  const restoreMap = [
+    ['khanScore',  'khan-scores'],
+    ['khanV',      'khan-verst'],
+    ['cs50V',      'cs50-verst'],
+    ['cs50P',      'cs50-pset'],
+    ['aiP',        'ai-prog'],
+    ['kumonW',     'kumon-done'],
+    ['kumonE',     'kumon-err'],
+    ['mood',       'mood-scores'],
+  ];
+  restoreMap.forEach(([stateKey,divId])=>{
+    const div=document.getElementById(divId);
+    const cur=(d[stateKey]||'').replace(/[<>]/g,'').trim();
+    if(div&&cur) div.querySelectorAll('.sb').forEach(b=>b.classList.toggle('sel',b.textContent.replace(/[<>]/g,'').trim()===cur));
+  });
+  // Restore textareas
+  [['reflect-note','note'],['note-khan','noteKhan'],['note-cs50','noteCs50'],['note-ai','noteAi'],['note-gut','noteGut']].forEach(([id,key])=>{
+    const el=document.getElementById(id);if(el)el.value=d[key]||'';
+  });
+  updateReflSummaries();
+}
+
+function toggleCS50(){const d=wd();d.cs50done=!d.cs50done;save();renderWeek();updateTabStatus();}
+
+function toggleReflection(){
+  const arrow=document.getElementById('refl-arrow');
+  const open=body.style.display==='none';
+  body.style.display=open?'block':'none';
+  arrow.style.transform=open?'rotate(180deg)':'rotate(0deg)';
+}
+
+function toggleSection(header){
+  const inner=header.nextElementSibling;
+  const chev=header.querySelector('.refl-chevron');
+  const open=inner.style.display==='none';
+  inner.style.display=open?'block':'none';
+  if(chev) chev.style.transform=open?'rotate(180deg)':'rotate(0deg)';
+}
+
+function updateReflSummaries(){
+  const d=wd();
+  const sumMap=[
+    ['sum-khan', d.khanScore||(d.khanV||'')],
+    ['sum-cs50', d.cs50P||(d.cs50V||'')],
+    ['sum-ai',   d.aiP||''],
+    ['sum-kumon',d.kumonW||(d.kumonE||'')],
+    ['sum-mood', d.mood||''],
+  ];
+  sumMap.forEach(([id,val])=>{
+    const el=document.getElementById(id);
+    if(el) el.textContent=val?val:'';
+  });
+}
+function toggleTask(day,ti){const d=wd();const k=`${day}_${ti}`;d.checks[k]=!d.checks[k];save();renderWeek();updateTabStatus();}
+function toggleKumon(idx){const d=wd();if(idx===0)d.kdi=!d.kdi;else d.kfr=!d.kfr;save();renderWeek();}
+function setKScore(id,val,btn){const d=wd();d[id+'Score']=val;save();const div=document.getElementById(id+'-scores');if(div)div.querySelectorAll('.sb').forEach(b=>b.classList.toggle('sel',b===btn));}
+function setScore(k,val,btn){
+  const d=wd();
+  if(k==='khan')d.khanScore=val;
+  else if(k==='khanV')d.khanV=val;
+  else if(k==='cs50V')d.cs50V=val;
+  else if(k==='cs50P')d.cs50P=val;
+  else if(k==='aiP')d.aiP=val;
+  else if(k==='kumonW')d.kumonW=val;
+  else if(k==='kumonE')d.kumonE=val;
+  else if(k==='mood')d.mood=val;
+  else d[k+'Score']=val;
+  save();
+  const divIds=[`${k}-scores`,`${k}-verst`,`${k}-pset`,`${k}-prog`,`${k}-done`,`${k}-err`,'mood-scores'];
+  divIds.forEach(id=>{const div=document.getElementById(id);if(div)div.querySelectorAll('.sb').forEach(b=>b.classList.toggle('sel',b===btn));});
+  updateReflSummaries();
+}
+function prevWeek(){S.cw=Math.max(0,S.cw-1);renderWeek();}
+function nextWeek(){S.cw=Math.min(37,S.cw+1);renderWeek();}
+
+function saveWeek(){
+  const d=wd();
+  // save all textarea notes
+  ['reflect-note','note-khan','note-cs50','note-ai','note-gut'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el){
+      const key={
+        'reflect-note':'note','note-khan':'noteKhan',
+        'note-cs50':'noteCs50','note-ai':'noteAi','note-gut':'noteGut'
+      }[id];
+      d[key]=el.value;
+    }
+  });
+  save();updateDash();updateTabStatus();
+  const c=Object.values(d.checks||{}).filter(Boolean).length+(d.cs50done?1:0);
+  const box=document.getElementById('status-box');
+  if(box){
+    box.style.display='block';
+    const strong = c>=4 && d.khanScore && d.mood;
+    box.className=strong?'ok-box':'warn-box';
+    box.innerHTML=`<p style="font-size:13px;margin:0;color:${strong?'var(--green)':'var(--amber)'}">
+      ${strong
+        ? `Week fully saved — ${c} Tasks, Khan ${d.khanScore}, Mood: ${d.mood}. Strong!`
+        : `Saved — ${c} Tasks. ${!d.khanScore?'Still enter Khan score. ':''}${!d.mood?'Still enter motivation.':''}`
+      }
+    </p>`;
+  }
+}
+
+function updateDash(){
+  const wks=Object.keys(S.weeks).length;
+  document.getElementById('d-weeks').textContent=wks;
+  let blocks=0,scores=[];
+  Object.values(S.weeks).forEach(w=>{
+    const c=Object.values(w.checks||{}).filter(Boolean).length+(w.cs50done?1:0);
+    blocks+=c;if(c>0)scores.push(c);
+  });
+  document.getElementById('d-blocks').textContent=blocks;
+  document.getElementById('d-kumon').textContent=totalKumon();
+  document.getElementById('d-avg').textContent=scores.length?(scores.reduce((a,b)=>a+b,0)/scores.length).toFixed(1):'—';
+  let streak=0;
+  Object.keys(S.weeks).map(Number).sort((a,b)=>b-a).every(wk=>{
+    const c=Object.values(S.weeks[wk].checks||{}).filter(Boolean).length+(S.weeks[wk].cs50done?1:0);
+    if(c>=3){streak++;return true;}return false;
+  });
+  document.getElementById('streak-num').textContent=streak;
+  const cp=Math.round((S.prog.cs||0)/11*100);
+  document.getElementById('cs50-bar').style.width=cp+'%';document.getElementById('cs50-lbl').textContent=`W${S.prog.cs||0}/11`;
+  const kp=Math.round((S.prog.kh||0)/5*100);
+  document.getElementById('khan-bar').style.width=kp+'%';document.getElementById('khan-lbl').textContent=KHAN_NAMES[S.prog.kh||0];
+  const ep=Math.round((S.prog.ea||0)/6*100);
+  document.getElementById('eai-bar').style.width=ep+'%';document.getElementById('eai-lbl').textContent=`${S.prog.ea||0}/6 Kap.`;
+  const ki=KUMON_LVL.indexOf(S.kumon.level||'');
+  document.getElementById('kumon-pb').style.width=(ki>0?Math.round((ki-1)/9*100):0)+'%';
+  document.getElementById('kumon-lbl').textContent=S.kumon.level?`Level ${S.kumon.level}`:'Level ?';
+  const grid=document.getElementById('streak-grid');
+  if(grid){grid.innerHTML='';
+    for(let i=0;i<38;i++){
+      const cell=document.createElement('div');cell.className='sc2';
+      const w=S.weeks[i];
+      if(w){const c=Object.values(w.checks||{}).filter(Boolean).length+(w.cs50done?1:0);
+        if(c>=5)cell.style.background='#1a7a4a';
+        else if(c>=3)cell.style.background='#1a73e8';
+        else if(c>=1)cell.style.background='#b5d4f4';}
+      grid.appendChild(cell);}
+  }
+}
+
+function renderTargetActual(){
+  const pw=planWeek();const soll=SOLL[pw];
+  const ist_cs=S.prog.cs||0,ist_kh=S.prog.kh||0,ist_ea=S.prog.ea||0,ist_ku=totalKumon();
+  const wksLogged=Object.keys(S.weeks).length;
+  const avgDays=wksLogged>0?(Object.values(S.weeks).reduce((n,w)=>n+Object.values(w.checks||{}).filter(Boolean).length+(w.cs50done?1:0),0)/wksLogged).toFixed(1):0;
+
+  function d(ist,soll,higher=true){
+    if(ist==soll)return{label:'On track',cls:'dp-ok'};
+    const ahead=higher?ist>soll:ist<soll;
+    const diff=Math.abs(ist-soll);
+    if(ahead)return{label:`+${diff} ahead`,cls:'dp-ahead'};
+    if(diff<=1)return{label:`–${diff} slightly behind`,cls:'dp-warn'};
+    return{label:`–${diff} behind plan`,cls:'dp-behind'};
+  }
+
+  function row(lbl,sv,iv,d){
+    const col=d.cls==='dp-ahead'?'var(--blue)':d.cls==='dp-ok'?'var(--green)':d.cls==='dp-warn'?'var(--amber)':'var(--red)';
+    return`<tr><td style="font-weight:700;color:var(--text)">${lbl}</td><td style="color:var(--text2);font-size:12px">${sv}</td><td style="font-weight:700;color:${col}">${iv}</td><td><span class="dp ${d.cls}">${d.label}</span></td></tr>`;
+  }
+
+  const cs50_soll_done=Object.values(S.weeks).filter(w=>w.cs50done).length;
+  const dcs=d(ist_cs,soll[0]);const dkh=d(ist_kh,soll[1]);
+  const dea=d(ist_ea,soll[2]);const dku=d(ist_ku,soll[3]);
+  const dcs50=d(cs50_soll_done,pw);
+  const ddays=parseFloat(avgDays)>=4?{label:'Strong',cls:'dp-ahead'}:parseFloat(avgDays)>=3?{label:'On track',cls:'dp-ok'}:parseFloat(avgDays)>=2?{label:'Slightly behind',cls:'dp-warn'}:{label:'Behind',cls:'dp-behind'};
+
+  // Check if everything is on track or ahead
+  const allGood=[dcs,dkh,dea,dku,dcs50,ddays].every(x=>x.cls==='dp-ok'||x.cls==='dp-ahead');
+  const siCard=document.querySelector('#sollist .card');
+  if(siCard){
+    siCard.style.background=allGood?'var(--green-l)':'var(--bg)';
+    siCard.style.borderColor=allGood?'var(--green)':'var(--border)';
+    siCard.style.borderWidth=allGood?'2px':'1px';
+  }
+
+  const tbody=document.getElementById('si-body');
+  if(tbody)tbody.innerHTML=`
+    <tr style="background:${allGood?'rgba(26,122,74,.08)':'var(--bg2)'}"><td colspan="4" style="padding:6px 8px;font-size:11px;color:var(--text2);font-weight:700">Plan week ${pw+1} — ${new Date().toLocaleDateString('en-GB')}${allGood?' &nbsp;<span style=\'color:var(--green);font-weight:700\'>All on track ✓</span>':''}</td></tr>
+    ${row('CS50x Weeks',`W${soll[0]}`,`W${ist_cs}`,dcs)}
+    ${row('CS50x Lectures',`${pw} lectures`,`${cs50_soll_done} lectures`,dcs50)}
+    ${row('Khan Academy',KHAN_NAMES[soll[1]],KHAN_NAMES[ist_kh],dkh)}
+    ${row('Elements of AI',`${soll[2]}/6 chapters`,`${ist_ea}/6 chapters`,dea)}
+    ${row('Kumon Sessions',`${soll[3]} sessions`,`${ist_ku} sessions`,dku)}
+    ${row('Avg study days/wk','5 days',`${avgDays} days`,ddays)}`;
+
+  const wb=document.getElementById('weekly-bars');
+  if(wb){
+    const wkeys=Object.keys(S.weeks).map(Number).sort((a,b)=>a-b).slice(-8);
+    if(!wkeys.length){wb.innerHTML='<p>No weeks logged yet.</p>';}
+    else wb.innerHTML=wkeys.map(wk=>{
+      const c=Object.values(S.weeks[wk].checks||{}).filter(Boolean).length+(S.weeks[wk].cs50done?1:0);
+      const pct=Math.round(c/6*100);
+      const col=c>=6?'#1a7a4a':c>=4?'#1a73e8':c>=2?'#b06000':'#d93025';
+      const lbl=WEEKS[wk]?WEEKS[wk].label.substring(0,12):`W${wk+1}`;
+      return`<div style="margin-bottom:7px"><div style="display:flex;justify-content:space-between;margin-bottom:2px"><span style="font-size:11px;color:var(--text2)">${lbl}</span><span style="font-size:11px;font-weight:700;color:${col}">${c}/6 tasks ${S.weeks[wk].cs50done?'+ CS50':'— CS50?'}</span></div><div class="pb-wrap"><div class="pb" style="width:${pct}%;background:${col}"></div></div></div>`;
+    }).join('');
+  }
+
+  const ksi=document.getElementById('kumon-si');
+  if(ksi){
+    const lvl=S.kumon.level||'?';const ki=KUMON_LVL.indexOf(lvl);
+    const months=Math.max(0,Math.floor((new Date()-START)/(1000*60*60*24*30)));
+    const sollLvl=months<=2?'K':months<=6?'K–L':months<=9?'L':'L–M';
+    const ok=ki>=6;
+    ksi.innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div style="background:var(--bg2);border-radius:var(--r);padding:10px"><div style="font-size:11px;color:var(--text2);margin-bottom:3px">Target now</div><div style="font-size:18px;font-weight:700">${sollLvl}</div></div><div style="background:${ok?'var(--green-l)':'var(--amber-l)'};border-radius:var(--r);padding:10px"><div style="font-size:11px;color:var(--text2);margin-bottom:3px">Current</div><div style="font-size:18px;font-weight:700;color:${ok?'var(--green)':'var(--amber)'}">${lvl==='?'?'Not entered':'Level '+lvl}</div></div></div><p style="margin-top:8px;font-size:12px">${ok?'Kumon on track or ahead!':'Please enter current level in the Kumon tab.'}</p>`;
+  }
+
+  const rec=document.getElementById('si-rec');
+  if(rec&&wksLogged>=2){
+    const behind=[];
+    if(dcs.cls==='dp-behind')behind.push('CS50x Problem Sets');
+    if(dcs50.cls==='dp-behind')behind.push('CS50x Sunday lectures');
+    if(dkh.cls==='dp-behind')behind.push('Khan Academy');
+    if(dea.cls==='dp-behind')behind.push('Elements of AI');
+    if(parseFloat(avgDays)<3)behind.push('Study days per week');
+    if(!behind.length)rec.innerHTML='<div class="ok-box"><p style="margin:0;color:var(--green)">Everything on track or ahead — excellent!</p></div>';
+    else if(behind.length===1)rec.innerHTML=`<div class="warn-box"><p style="margin:0;color:var(--amber)">Slight delay: <strong>${behind[0]}</strong>. One extra session per week will fix this.</p></div>`;
+    else rec.innerHTML=`<div style="background:var(--red-l);border:1px solid var(--red);border-radius:var(--r);padding:10px 14px"><p style="margin:0;color:var(--red-d,var(--red))">Behind: <strong>${behind.join(', ')}</strong>. Priority: Khan Maths → CS50x → Elements of AI.</p></div>`;
+  }
+}
+
+function saveKumonLevel(){const sel=document.getElementById('kumon-current');if(sel&&sel.value){S.kumon.level=sel.value;save();renderKumon();updateDash();}}
+function renderKumon(){
+  const order=['F','G','H','I','J','K','L','M','N','O'];const ci=order.indexOf(S.kumon.level||'');
+  [[6,5],[7,7],[8,8],[9,10]].forEach(([ti,mx],i)=>{const bar=document.getElementById(`kbar-${i+1}`);if(bar)bar.style.width=(ci>=0?Math.min(Math.round((ci+1)/mx*100),100):0)+'%';});
+  if(S.kumon.level){const sel=document.getElementById('kumon-current');if(sel)sel.value=S.kumon.level;}
+  const hist=document.getElementById('kumon-history');
+  const sessions=Object.entries(S.weeks).flatMap(([wk,w])=>{const r=[];if(w.kdi&&w.kdiScore)r.push({w:`W${+wk+1} Tue`,s:w.kdiScore});if(w.kfr&&w.kfrScore)r.push({w:`W${+wk+1} Fri`,s:w.kfrScore});return r;}).slice(-10).reverse();
+  if(hist)hist.innerHTML=sessions.length?sessions.map(s=>`<div class="hr-row"><span>${s.w}</span><span class="tag ${s.s.includes('<5')?'t-green':s.s.includes('<10')?'t-amber':'t-red'}">${s.s}</span></div>`).join(''):'<p>No sessions logged yet.</p>';
+}
+
+function renderMs(){
+  const list=document.getElementById('ms-list');if(!list)return;
+  list.innerHTML=MILESTONES.map((m,i)=>{const done=S.ms[i];return`<div class="ms-row"><div class="msdot ${done?'ms-done':i<=1?'ms-active':'ms-future'}">${done?'✓':`M${i+1}`}</div><div class="ms-info"><div class="ms-title">${m.title}</div><div class="ms-sub">${m.sub}</div></div><button class="ms-btn${done?' done-btn':''}" onclick="toggleMs(${i})">${done?'Done':'Open'}</button></div>`;}).join('');
+  const done=S.ms.filter(Boolean).length;
+  const cnt=document.getElementById('ms-count');const bar=document.getElementById('ms-bar');
+  if(cnt)cnt.textContent=done;if(bar)bar.style.width=Math.round(done/9*100)+'%';
+}
+function toggleMs(i){S.ms[i]=!S.ms[i];save();renderMs();}
+
+function saveProgress(){
+  const c=document.getElementById('cs50-input');const k=document.getElementById('khan-sel');const e=document.getElementById('eai-input');
+  if(c)S.prog.cs=parseInt(c.value)||0;if(k)S.prog.kh=parseInt(k.value)||0;if(e)S.prog.ea=parseInt(e.value)||0;
+  save();updateDash();updateTabStatus();renderHistory();
+}
+function renderHistory(){
+  const hist=document.getElementById('history-list');
+  const wkeys=Object.keys(S.weeks).map(Number).sort((a,b)=>a-b);
+  if(!hist||!wkeys.length){if(hist)hist.innerHTML='<p>No weeks logged yet.</p>';return;}
+  hist.innerHTML=wkeys.slice(-12).map(wk=>{
+    const w=S.weeks[wk];const c=Object.values(w.checks||{}).filter(Boolean).length+(w.cs50done?1:0);
+    const col=c>=6?'#1a7a4a':c>=4?'#1a73e8':c>=2?'#b06000':'#c5221f';
+    const lbl=WEEKS[wk]?WEEKS[wk].label:`W${wk+1}`;
+    return`<div class="hr-row">
+      <span style="color:var(--text);font-size:11px">${lbl}</span>
+      <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap">
+        <span style="font-size:12px;font-weight:700;color:${col}">${c}/6</span>
+        ${w.cs50done?'<span class="tag t-blue">CS50 ✓</span>':''}
+        ${w.khanScore?`<span class="tag t-green">Khan: ${w.khanScore}</span>`:''}
+        ${w.cs50P?`<span class="tag t-blue">Pset: ${w.cs50P}</span>`:''}
+        ${w.aiP?`<span class="tag t-purple">AI: ${w.aiP}</span>`:''}
+        ${w.kumonW?`<span class="tag t-red">Kumon: ${w.kumonW}</span>`:''}
+        ${w.mood?`<span class="tag t-gray">${w.mood}</span>`:''}
+      </div>
+      ${w.note?`<div style="width:100%;font-size:11px;color:var(--text2);padding-top:3px;font-style:italic">"${w.note}"</div>`:''}
+    </div>`;
+  }).join('');
+}
+
+load();updateDash();renderMs();setTimeout(()=>{renderWeek();updateTabStatus();},50);
+
+// ── AI REVIEW / REPORT GENERATOR ─────────────────────────────────────────────
+
+let _reportRange='all';
+let _reportInc={khan:true,cs50:true,ai:true,kumon:true,mood:true,adapt:true};
+
+function setRange(v,btn){
+  _reportRange=v;
+  document.getElementById('week-range').querySelectorAll('.sb').forEach(b=>b.classList.toggle('sel',b===btn));
+}
+
+function toggleInc(key,btn){
+  _reportInc[key]=!_reportInc[key];
+  btn.classList.toggle('sel',_reportInc[key]);
+}
+
+function renderReview(){
+  // restore button states
+  ['khan','cs50','ai','kumon','mood','adapt'].forEach(k=>{
+    const b=document.getElementById('inc-'+k);
+    if(b) b.classList.toggle('sel',_reportInc[k]);
+  });
+}
+
+function generateReport(){
+  const wkeys=Object.keys(S.weeks).map(Number).sort((a,b)=>a-b);
+  let filtered=wkeys;
+  if(_reportRange==='last4') filtered=wkeys.slice(-4);
+  if(_reportRange==='last8') filtered=wkeys.slice(-8);
+
+  const KHAN_NAMES=['Start','Algebra 2','Trigonometry','Precalculus','Calculus AB','Calculus BC'];
+  const now=new Date().toLocaleDateString('en-GB');
+  const totalWeeks=Object.keys(S.weeks).length;
+  const totalBlocks=Object.values(S.weeks).reduce((n,w)=>n+Object.values(w.checks||{}).filter(Boolean).length+(w.cs50done?1:0),0);
+  const avgDays=totalWeeks>0?(totalBlocks/totalWeeks).toFixed(1):'0';
+
+  let r='';
+  r+='='.repeat(60)+'\n';
+  r+='LEARNING TRACKER — AI ANALYSIS REPORT\n';
+  r+=`Generated: ${now}\n`;
+  r+='='.repeat(60)+'\n\n';
+
+  // Overview
+  r+='## LEARNER PROFILE\n';
+  r+='- Age: 14, Year 9, IB start target: 2030\n';
+  r+='- Languages: German (native), English (native)\n';
+  r+='- Strength: Mathematics (10 years Kumon)\n';
+  r+='- Target universities: UK (Oxford, Imperial), USA (MIT, Stanford), Germany (TU Munich), Switzerland (ETH Zurich)\n';
+  r+='- Courses: CS50x Harvard, Khan Academy Maths, Elements of AI / Building AI, Yale Financial Markets, Kumon\n\n';
+
+  // Current progress
+  r+='## CURRENT PROGRESS\n';
+  r+=`- Weeks logged: ${totalWeeks}\n`;
+  r+=`- Total tasks completed: ${totalBlocks}\n`;
+  r+=`- Average study days/week: ${avgDays}/6\n`;
+  r+=`- CS50x: Week ${S.prog.cs||0}/11\n`;
+  r+=`- Khan Academy: ${KHAN_NAMES[S.prog.kh||0]}\n`;
+  r+=`- Elements of AI: ${S.prog.ea||0}/6 chapters\n`;
+  r+=`- Kumon level: ${S.kumon.level||'not entered'}\n`;
+  if(S.adapt&&S.adapt.currentPace) r+=`- Current learning pace: ${S.adapt.currentPace}\n`;
+  if(S.adapt&&S.adapt.placementScore) r+=`- Khan placement test score: ${S.adapt.placementScore} (course: ${S.adapt.placementCourse||'—'})\n`;
+  r+='\n';
+
+  // Weekly data
+  if(filtered.length>0){
+    r+='## WEEKLY REFLECTION DATA\n';
+    filtered.forEach(wk=>{
+      const w=S.weeks[wk];
+      const wdata=WEEKS[wk];
+      const label=wdata?wdata.label:`Week ${wk+1}`;
+      const tasks=Object.values(w.checks||{}).filter(Boolean).length+(w.cs50done?1:0);
+      r+=`\n### ${label}\n`;
+      r+=`- Tasks completed: ${tasks}/6\n`;
+      r+=`- CS50x lecture watched: ${w.cs50done?'yes':'no'}\n`;
+      if(_reportInc.khan){
+        if(w.khanScore) r+=`- Khan unit test score: ${w.khanScore}\n`;
+        if(w.khanV) r+=`- Khan understanding: ${w.khanV}\n`;
+        if(w.noteKhan) r+=`- Khan note: "${w.noteKhan}"\n`;
+      }
+      if(_reportInc.cs50){
+        if(w.cs50V) r+=`- CS50x lecture comprehension: ${w.cs50V}\n`;
+        if(w.cs50P) r+=`- CS50x problem set: ${w.cs50P}\n`;
+        if(w.noteCs50) r+=`- CS50x note: "${w.noteCs50}"\n`;
+      }
+      if(_reportInc.ai){
+        if(w.aiP) r+=`- AI course progress: ${w.aiP}\n`;
+        if(w.noteAi) r+=`- AI note: "${w.noteAi}"\n`;
+      }
+      if(_reportInc.kumon){
+        if(w.kumonW) r+=`- Kumon sessions: ${w.kumonW}\n`;
+        if(w.kumonE) r+=`- Kumon error rate: ${w.kumonE}\n`;
+        if(w.kdiScore||w.kfrScore) r+=`- Kumon error rates: Tue ${w.kdiScore||'—'}, Fri ${w.kfrScore||'—'}\n`;
+      }
+      if(_reportInc.mood){
+        if(w.mood) r+=`- Motivation: ${w.mood}\n`;
+        if(w.noteGut) r+=`- What went well: "${w.noteGut}"\n`;
+        if(w.note) r+=`- Difficulty / next week plan: "${w.note}"\n`;
+      }
+    });
+    r+='\n';
+  }
+
+  // Milestones
+  r+='## MILESTONES\n';
+  const MILESTONES_EN=[
+    'Khan Placement Test completed',
+    'CS50x Week 0 (Scratch) submitted',
+    'Elements of AI Certificate',
+    'First Python script on GitHub',
+    'Building AI Certificate',
+    'Harvard CS50x Certificate',
+    'Khan Precalculus ≥80%',
+    'Kumon Level L–M reached',
+    'Kangaroo Mathematics participation',
+  ];
+  S.ms.forEach((done,i)=>{
+    r+=`- M${i+1} ${MILESTONES_EN[i]}: ${done?'COMPLETED':'pending'}\n`;
+  });
+  r+='\n';
+
+  // Adaptation history
+  if(_reportInc.adapt&&S.adapt&&S.adapt.history&&S.adapt.history.length){
+    r+='## ADAPTATION HISTORY\n';
+    S.adapt.history.forEach(h=>{
+      if(h.type==='Placement test'){
+        r+=`- ${h.date}: Placement test score ${h.score}, started in ${h.course||'—'} → pace set to ${h.pace}\n`;
+      } else {
+        r+=`- ${h.date}: Khan ${h.khan||'—'}, CS50x ${h.cs50||'—'}, Kumon ${h.kumon||'—'} → pace ${h.changed?'changed to':'confirmed as'} ${h.pace}\n`;
+      }
+    });
+    r+='\n';
+  }
+
+  // Patterns analysis (auto)
+  r+='## AUTO-DETECTED PATTERNS\n';
+  const wkScores=filtered.map(wk=>({
+    score:S.weeks[wk].khanScore||'',
+    days:Object.values(S.weeks[wk].checks||{}).filter(Boolean).length+(S.weeks[wk].cs50done?1:0),
+    mood:S.weeks[wk].mood||'',
+    cs50:S.weeks[wk].cs50P||''
+  }));
+  const lowKhan=wkScores.filter(w=>w.score&&(w.score.includes('<70')||w.score.includes('70–79'))).length;
+  const highKhan=wkScores.filter(w=>w.score&&(w.score.includes('>90')||w.score.includes('≥90')||w.score.includes('80–90'))).length;
+  const lowDays=wkScores.filter(w=>w.days<3).length;
+  const psetBehind=wkScores.filter(w=>w.cs50&&w.cs50.includes('Behind')).length;
+  const hardWeeks=wkScores.filter(w=>w.mood&&(w.mood.includes('Hard')||w.mood.includes('Very hard')||w.mood.includes('Schwer'))).length;
+
+  if(lowKhan>0) r+=`- Khan scores below 80%: ${lowKhan} week(s) — may indicate gaps or too-fast progression\n`;
+  if(highKhan>0) r+=`- Khan scores above 80%: ${highKhan} week(s) — strong performance, consider accelerating\n`;
+  if(lowDays>0) r+=`- Fewer than 3 study days: ${lowDays} week(s) — consistency at risk\n`;
+  if(psetBehind>0) r+=`- CS50x problem sets behind schedule: ${psetBehind} week(s)\n`;
+  if(hardWeeks>0) r+=`- Weeks rated as hard/very hard: ${hardWeeks} — monitor for burnout\n`;
+  if(lowKhan===0&&lowDays===0&&psetBehind===0) r+=`- No major red flags detected in the selected period\n`;
+  r+='\n';
+
+  r+='='.repeat(60)+'\n';
+  r+='END OF REPORT\n';
+  r+='='.repeat(60)+'\n';
+
+  document.getElementById('report-text').value=r;
+  document.getElementById('report-output').style.display='block';
+
+  // Suggested prompt
+  const prompt=`I am a 14-year-old student preparing for the IB Diploma (target 2030) with a strong maths background (10 years Kumon). Below is my learning tracker report covering my progress in CS50x Harvard, Khan Academy Maths, Elements of AI, Building AI, and Kumon.\n\nPlease analyse:\n1. My overall learning trajectory — am I on track for top universities (Oxford, ETH Zurich, MIT)?\n2. Specific patterns in my weekly data — what is working, what needs attention?\n3. Should my Khan Academy pace be adjusted (accelerated, maintained, or slowed down)?\n4. Any specific recommendations for CS50x, Elements of AI, or Kumon based on my reflections?\n5. What should my focus be for the next 4 weeks?\n\nHere is my data:\n\n[PASTE REPORT HERE]`;
+
+  document.getElementById('suggested-prompt').textContent=prompt;
+  document.getElementById('report-output').scrollIntoView({behavior:'smooth'});
+}
+
+function copyReport(){
+  const ta=document.getElementById('report-text');
+  ta.select();
+  document.execCommand('copy');
+  const btn=document.getElementById('copy-btn');
+  btn.textContent='Copied!';
+  btn.style.background='var(--green-l)';
+  btn.style.color='var(--green)';
+  btn.style.borderColor='var(--green)';
+  setTimeout(()=>{btn.textContent='Copy report';btn.style.background='#f0ebff';btn.style.color='#6b35d4';btn.style.borderColor='#7F77DD';},2500);
+}
+
+function copyPrompt(){
+  const div=document.getElementById('suggested-prompt');
+  const ta=document.createElement('textarea');
+  ta.value=div.textContent;
+  document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
+  event.target.textContent='Copied!';
+  setTimeout(()=>event.target.textContent='Copy prompt',2000);
+}
+const PACE_PLANS={
+  accelerated:{
+    label:'Accelerated',color:'#1a7a4a',bg:'var(--green-l)',
+    khan:[
+      {week:1,chapter:'Algebra 2',note:'Do the Course Challenge — if ≥80% skip to next chapter immediately'},
+      {week:2,chapter:'Trigonometry',note:'Move here after Algebra 2 challenge — do not linger'},
+      {week:3,chapter:'Precalculus',note:'Target: complete by week 5'},
+      {week:6,chapter:'AP Calculus AB',note:'Start Calculus early — major IB AA HL advantage'},
+      {week:10,chapter:'AP Statistics',note:'Parallel track for Quant Finance preparation'},
+    ],
+    cs50:'Maintain 1 lecture per Sunday + 1 Problem Set per week. If ahead, explore CS50 Shorts.',
+    eai:'Complete Elements of AI by week 4 — start Building AI immediately after.',
+    note:'You scored ≥80% on the placement test. Move to Precalculus within the first 2 weeks. If a chapter challenge scores ≥80%, skip ahead — do not repeat what you already know. Target Calculus AB by month 3.'
+  },
+  standard:{
+    label:'Standard',color:'#1a73e8',bg:'var(--blue-l)',
+    khan:[
+      {week:1,chapter:'Algebra 2',note:'Full course — complete all units, do not skip chapters'},
+      {week:4,chapter:'Trigonometry',note:'After Algebra 2 ≥80% on unit tests'},
+      {week:7,chapter:'Precalculus',note:'Core IB AA HL foundation'},
+      {week:11,chapter:'AP Calculus AB',note:'Start before IB year begins'},
+    ],
+    cs50:'1 lecture per Sunday + 1 Problem Set per week — steady rhythm, no rush.',
+    eai:'Complete Elements of AI by week 6 (1 chapter every 2 weeks).',
+    note:'You scored 70–79% on the placement test. Follow the standard plan — complete each chapter fully before moving on. Aim ≥80% on every unit test before advancing.'
+  },
+  consolidate:{
+    label:'Consolidate',color:'#b06000',bg:'var(--amber-l)',
+    khan:[
+      {week:1,chapter:'Pre-Algebra / Algebra 1 review',note:'Use Khan diagnostic to find exact gaps'},
+      {week:3,chapter:'Algebra 2',note:'Start here once gaps are closed — no skipping'},
+      {week:8,chapter:'Trigonometry',note:'After completing Algebra 2 ≥80%'},
+      {week:12,chapter:'Precalculus',note:'Steady progress — quality over speed'},
+    ],
+    cs50:'1 lecture per Sunday — allow 2 weeks per Problem Set if needed. Completion matters more than speed.',
+    eai:'Do Elements of AI chapters on Wednesday instead of Khan to reduce cognitive load.',
+    note:'You scored below 70%. That is completely normal — it means the foundation needs strengthening first. A solid Algebra 2 will make Trigonometry, Precalculus and IB Maths AA HL dramatically easier.'
+  }
+};
+
+function paceFromPlacement(score){
+  if(score==='≥90%'||score==='80–89%') return 'accelerated';
+  if(score==='70–79%'||score==='50–69%') return 'standard';
+  return 'consolidate';
+}
+
+function adjustPace(cur,khan,cs50,kumon){
+  let sc=0;
+  if(khan==='≥90%')sc+=2; else if(khan==='80–89%')sc+=1; else if(khan==='<70%')sc-=2;
+  if(cs50==='Ahead')sc+=1; else if(cs50==='Behind 1 week')sc-=1; else if(cs50==='Behind 2+ weeks')sc-=2;
+  if(kumon==='Improving')sc+=1; else if(kumon==='Getting worse')sc-=1;
+  if(sc>=3) return 'accelerated';
+  if(sc<=-2) return 'consolidate';
+  if(sc>=1&&cur==='consolidate') return 'standard';
+  if(sc<=-1&&cur==='accelerated') return 'standard';
+  return cur;
+}
+
+let _tp='',_tc='',_perf='',_pcs='',_pku='';
+
+function setPlacement(v,btn){_tp=v;document.getElementById('place-scores').querySelectorAll('.sb').forEach(b=>b.classList.toggle('sel',b===btn));_showPRec();}
+function setPlaceCourse(v,btn){_tc=v;document.getElementById('place-course').querySelectorAll('.sb').forEach(b=>b.classList.toggle('sel',b===btn));}
+function setPerf(v,btn){_perf=v;document.getElementById('perf-scores').querySelectorAll('.sb').forEach(b=>b.classList.toggle('sel',b===btn));}
+function setPerfCS(v,btn){_pcs=v;document.getElementById('perf-cs50').querySelectorAll('.sb').forEach(b=>b.classList.toggle('sel',b===btn));}
+function setPerfKumon(v,btn){_pku=v;document.getElementById('perf-kumon').querySelectorAll('.sb').forEach(b=>b.classList.toggle('sel',b===btn));}
+
+function _showPRec(){
+  if(!_tp) return;
+  const pace=paceFromPlacement(_tp);
+  const plan=PACE_PLANS[pace];
+  const rec=document.getElementById('placement-rec');
+  rec.style.display='block';
+  rec.innerHTML=`<div style="background:${plan.bg};border-radius:var(--r);padding:10px 12px;border-left:3px solid ${plan.color}">
+    <div style="font-size:12px;font-weight:700;color:${plan.color};margin-bottom:4px">Recommended pace: ${plan.label}</div>
+    <p style="font-size:12px;color:var(--text2);margin:0">${plan.note}</p>
+  </div>`;
+}
+
+function savePlacement(){
+  if(!_tp){alert('Please select a placement test score.');return;}
+  if(!S.adapt) S.adapt={placementScore:'',placementCourse:'',perfScore:'',perfCS50:'',perfKumon:'',history:[],currentPace:'standard'};
+  S.adapt.placementScore=_tp;
+  S.adapt.placementCourse=_tc;
+  S.adapt.currentPace=paceFromPlacement(_tp);
+  S.adapt.history=S.adapt.history||[];
+  S.adapt.history.push({date:new Date().toLocaleDateString('en-GB'),type:'Placement test',score:_tp,course:_tc,pace:S.adapt.currentPace});
+  save();renderAdapt();
+}
+
+function runAdaptEngine(){
+  if(!_perf&&!_pcs&&!_pku){alert('Please select at least one performance indicator.');return;}
+  if(!S.adapt) S.adapt={placementScore:'',placementCourse:'',history:[],currentPace:'standard'};
+  const prev=S.adapt.currentPace||'standard';
+  const next=adjustPace(prev,_perf,_pcs,_pku);
+  S.adapt.currentPace=next;
+  S.adapt.history=S.adapt.history||[];
+  const changed=next!==prev;
+  S.adapt.history.push({date:new Date().toLocaleDateString('en-GB'),type:'Weekly check',khan:_perf,cs50:_pcs,kumon:_pku,pace:next,changed});
+  save();
+
+  const plan=PACE_PLANS[next];
+  let html=`<div style="background:${plan.bg};border-radius:var(--r);padding:12px 14px;border-left:3px solid ${plan.color}">`;
+  html+=`<div style="font-size:13px;font-weight:700;color:${plan.color};margin-bottom:6px">${changed?`Pace adjusted: ${PACE_PLANS[prev].label} → ${plan.label}`:`Pace confirmed: ${plan.label}`}</div>`;
+
+  if(next==='accelerated'){
+    html+=`<p style="font-size:12px;color:var(--text2);margin-bottom:6px">Strong performance — keep pushing forward.</p>
+    <p style="font-size:12px;color:var(--text);margin:0"><strong>Khan next week:</strong> If current unit score ≥80%, move to next chapter immediately. Do not spend extra time on topics you already know.</p>`;
+  } else if(next==='standard'){
+    html+=`<p style="font-size:12px;color:var(--text2);margin-bottom:6px">On track — maintain consistent rhythm.</p>
+    <p style="font-size:12px;color:var(--text);margin:0"><strong>Khan next week:</strong> Complete current chapter before moving on. If unit test score is 70–79%, redo practice exercises once more before advancing.</p>`;
+  } else {
+    html+=`<p style="font-size:12px;color:var(--text2);margin-bottom:6px">Some areas need consolidation — this is normal and the right call.</p>
+    <p style="font-size:12px;color:var(--text);margin:0"><strong>Khan next week:</strong> Go back one unit and redo it. Do not advance until score is ≥75%. A solid foundation now saves weeks of confusion later.</p>`;
+  }
+  if(_pcs==='Behind 2+ weeks')html+=`<p style="font-size:12px;color:var(--text);margin-top:8px"><strong>CS50x:</strong> Spend full Sunday catching up on Problem Sets rather than watching new lecture. Completing Psets matters more than watching ahead.</p>`;
+  if(_pcs==='Ahead')html+=`<p style="font-size:12px;color:var(--text);margin-top:8px"><strong>CS50x:</strong> Ahead — great. Use extra Sunday time to explore CS50 Shorts or plan your Final Project idea early.</p>`;
+  if(_pku==='Getting worse')html+=`<p style="font-size:12px;color:var(--text);margin-top:8px"><strong>Kumon:</strong> Error rate rising — tell the Kumon instructor. They may add review sheets before advancing. This is how Kumon is designed to work, not a setback.</p>`;
+
+  html+=`</div>`;
+  document.getElementById('adapt-result').innerHTML=html;
+  renderAdapt();
+}
+
+function renderAdapt(){
+  if(!S.adapt) return;
+  if(S.adapt.placementScore){
+    _tp=S.adapt.placementScore;
+    document.getElementById('place-scores').querySelectorAll('.sb').forEach(b=>{
+      const bv=b.textContent.replace(/[<≥]/g,'').trim();
+      const sv=(_tp||'').replace(/[<≥]/g,'').trim();
+      b.classList.toggle('sel',bv===sv);
+    });
+    _showPRec();
+  }
+  if(S.adapt.placementCourse){
+    _tc=S.adapt.placementCourse;
+    document.getElementById('place-course').querySelectorAll('.sb').forEach(b=>b.classList.toggle('sel',b.textContent===_tc));
+  }
+  if(S.adapt.currentPace){
+    const plan=PACE_PLANS[S.adapt.currentPace];
+    const card=document.getElementById('adapt-plan-card');
+    const body=document.getElementById('adapt-plan-body');
+    if(card&&body){
+      card.style.display='block';
+      let html=`<div style="background:${plan.bg};border-radius:var(--r);padding:10px 12px;margin-bottom:12px;border-left:3px solid ${plan.color}">
+        <div style="font-size:13px;font-weight:700;color:${plan.color}">Current pace: ${plan.label}</div>
+        <p style="font-size:12px;color:var(--text2);margin-top:4px">${plan.note}</p>
+      </div>`;
+      html+=`<h4 style="margin-bottom:8px">Khan Academy — chapter roadmap</h4>`;
+      html+=plan.khan.map(k=>`<div style="display:flex;gap:10px;align-items:flex-start;padding:6px 0;border-bottom:1px solid var(--border)">
+        <div style="background:${plan.color};color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:8px;white-space:nowrap;flex-shrink:0;margin-top:2px">Week ${k.week}</div>
+        <div><div style="font-size:13px;font-weight:600;color:var(--text)">${k.chapter}</div><div style="font-size:11px;color:var(--text2)">${k.note}</div></div>
+      </div>`).join('');
+      html+=`<div style="margin-top:10px;padding:8px 10px;background:var(--bg2);border-radius:var(--r)">
+        <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:3px">CS50x</div>
+        <p style="font-size:12px;color:var(--text2);margin:0">${plan.cs50}</p>
+      </div>
+      <div style="margin-top:6px;padding:8px 10px;background:var(--bg2);border-radius:var(--r)">
+        <div style="font-size:11px;font-weight:700;color:var(--text2);margin-bottom:3px">Elements of AI / Building AI</div>
+        <p style="font-size:12px;color:var(--text2);margin:0">${plan.eai}</p>
+      </div>`;
+      body.innerHTML=html;
+    }
+  }
+  const hist=document.getElementById('pace-history');
+  const h=S.adapt.history||[];
+  if(hist&&h.length){
+    hist.innerHTML=h.slice(-8).reverse().map(e=>{
+      const p=PACE_PLANS[e.pace]||PACE_PLANS.standard;
+      return`<div style="display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--border);gap:8px">
+        <div>
+          <div style="font-size:12px;font-weight:600;color:var(--text)">${e.date} — ${e.type}</div>
+          <div style="font-size:11px;color:var(--text2)">${e.type==='Placement test'?`Score: ${e.score} · Course: ${e.course||'—'}`:`Khan: ${e.khan||'—'} · CS50x: ${e.cs50||'—'} · Kumon: ${e.kumon||'—'}`}</div>
+        </div>
+        <span style="font-size:11px;font-weight:700;padding:2px 9px;border-radius:9px;background:${p.bg};color:${p.color};white-space:nowrap;flex-shrink:0">${p.label}${e.changed?' ↕':''}</span>
+      </div>`;
+    }).join('');
+  }
+}
+</script>
+</body>
+</html>
